@@ -13,18 +13,20 @@
     }
 
     .topbar {
-      height: 50px;
+      height: 75px;
       background-color: #5FA239;
       color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 20px;
+      text-transform: uppercase;
     }
 
     .topbar .site-name {
       font-weight: bold;
-      font-size: 18px;
+      font-size: 20px;
+      
     }
 
     .topbar .search-box input {
@@ -46,7 +48,7 @@
     .sidebar {
       width: 200px;
       background-color: #5FA239;
-      padding: 20px;
+      padding-left: 30px;
       color: white;
       font-weight: bold;
     }
@@ -57,6 +59,8 @@
       text-decoration: none;
       color: white;
       font-weight: bold;
+      font-size: 20px;
+      text-transform: uppercase;
     }
 
     .sidebar a:hover {
@@ -71,15 +75,16 @@
     .sidebar details.dropdown summary {
       list-style: none;
       cursor: pointer;
-      padding-left: 20px;
+      padding-left: 15px;
       position: relative;
     }
 
     /* Insert arrow */
     .sidebar details.dropdown summary::before {
-      content: "▶";
+      content: ">";
       position: absolute;
       left: 0;
+      font-weight: bold;
       transition: transform 0.2s ease;
     }
 
@@ -97,8 +102,8 @@
 
     /* Sub-links */
     .sidebar details.dropdown a.subproject {
-      font-weight: normal;
-      font-size: 14px;
+      font-weight: bold;
+      font-size: 20px;
       margin-left: 15px;
     }
 
@@ -130,7 +135,8 @@
     <div class="sidebar">
       <a href="landing.html" target="contentFrame">Intro</a>
       <a href="about.html" target="contentFrame">About Me</a>
-
+      <a href="contact.html" target="contentFrame">Contact Me</a>
+      
       <details class="dropdown">
         <summary>
           <a href="projects.html" target="contentFrame">Projects</a>
@@ -139,8 +145,6 @@
         <a href="projects-personal.html" target="contentFrame" class="subproject">Personal</a>
         <a href="projects-free.html" target="contentFrame" class="subproject">Free-Time</a>
       </details>
-
-      <a href="contact.html" target="contentFrame">Contact</a>
     </div>
 
     <div class="content">
