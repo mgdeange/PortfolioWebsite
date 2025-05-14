@@ -2,33 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
+  <title>Engineering Portfolio</title>
   <style>
     body {
       margin: 0;
       font-family: sans-serif;
       display: flex;
+      flex-direction: column;
       height: 100vh;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #5fa239;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .topbar .site-name {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .topbar .search-box input {
+      padding: 5px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .topbar .tagline {
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    .main {
+      display: flex;
+      flex-grow: 1;
     }
 
     .sidebar {
       width: 200px;
-      background-color: #f4f4f4;
+      background-color: #5fa239;
       padding: 20px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     }
 
+<style>
     .sidebar a {
       display: block;
       margin: 10px 0;
       text-decoration: none;
-      color: #333;
+      color: white;
       font-weight: bold;
     }
 
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dropdown arrow styling */
+    .sidebar details.dropdown summary {
+      position: relative;
+      padding-left: 20px;
+      cursor: pointer;
+      color: white;
+      list-style: none;
+    }
+
+    .sidebar details.dropdown summary::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .sidebar details[open].dropdown summary::before {
+      transform: rotate(90deg);
+    }
+</style>
+
     .content {
       flex-grow: 1;
-      height: 100vh;
+      height: 100%;
     }
 
     iframe {
@@ -40,14 +97,28 @@
 </head>
 <body>
 
-  <div class="sidebar">
-    <a href="about.html" target="contentFrame">About Me</a>
-    <a href="projects.html" target="contentFrame">Projects</a>
-    <a href="contact.html" target="contentFrame">Contact</a>
+  <div class="topbar">
+    <div class="site-name">Engineering Portfolio</div>
+    <div class="search-box">
+      <input type="text" placeholder="Search (placeholder)">
+    </div>
+    <div class="tagline">enter actual domain when you get it here</div>
   </div>
 
-  <div class="content">
-    <iframe name="contentFrame" src="about.html"></iframe>
+  <div class="main">
+    <div class="sidebar">
+      <a href="landing.html" target="contentFrame">Landing</a>
+      <a href="about.html" target="contentFrame">About Me</a>
+    
+      <details>
+        <summary><strong>Projects</strong></summary>
+        <a href="projects-eng.html" target="contentFrame" style="margin-left: 15px;">Engineering</a>
+        <a href="projects-personal.html" target="contentFrame" style="margin-left: 15px;">Personal</a>
+        <a href="projects-free.html" target="contentFrame" style="margin-left: 15px;">Free-Time</a>
+      </details>
+    
+      <a href="contact.html" target="contentFrame">Contact</a>
+    </div>
   </div>
 
 </body>
