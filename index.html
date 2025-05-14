@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Engineering Portfolio</title>
   <style>
     body {
@@ -14,7 +14,7 @@
 
     .topbar {
       height: 50px;
-      background-color: #5fa239;
+      background-color: #5FA239;
       color: white;
       display: flex;
       align-items: center;
@@ -45,11 +45,12 @@
 
     .sidebar {
       width: 200px;
-      background-color: #5fa239;
+      background-color: #5FA239;
       padding: 20px;
+      color: white;
+      font-weight: bold;
     }
 
-<style>
     .sidebar a {
       display: block;
       margin: 10px 0;
@@ -62,15 +63,19 @@
       text-decoration: underline;
     }
 
-    /* Dropdown arrow styling */
-    .sidebar details.dropdown summary {
-      position: relative;
-      padding-left: 20px;
-      cursor: pointer;
-      color: white;
-      list-style: none;
+    /* Dropdown container */
+    .sidebar details.dropdown {
+      margin: 10px 0;
     }
 
+    .sidebar details.dropdown summary {
+      list-style: none;
+      cursor: pointer;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    /* Insert arrow */
     .sidebar details.dropdown summary::before {
       content: "▶";
       position: absolute;
@@ -78,10 +83,24 @@
       transition: transform 0.2s ease;
     }
 
+    /* Rotate arrow when open */
     .sidebar details[open].dropdown summary::before {
       transform: rotate(90deg);
     }
-</style>
+
+    /* Link inside summary */
+    .sidebar summary a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Sub-links */
+    .sidebar details.dropdown a.subproject {
+      font-weight: normal;
+      font-size: 14px;
+      margin-left: 15px;
+    }
 
     .content {
       flex-grow: 1;
@@ -97,27 +116,35 @@
 </head>
 <body>
 
+  <!-- Top Bar -->
   <div class="topbar">
     <div class="site-name">Engineering Portfolio</div>
     <div class="search-box">
       <input type="text" placeholder="Search (placeholder)">
     </div>
-    <div class="tagline">enter actual domain when you get it here</div>
+    <div class="tagline">Michaela De Angelis Werner</div>
   </div>
 
+  <!-- Main Layout -->
   <div class="main">
     <div class="sidebar">
       <a href="landing.html" target="contentFrame">Landing</a>
       <a href="about.html" target="contentFrame">About Me</a>
-    
-      <details>
-        <summary><strong>Projects</strong></summary>
-        <a href="projects-eng.html" target="contentFrame" style="margin-left: 15px;">Engineering</a>
-        <a href="projects-personal.html" target="contentFrame" style="margin-left: 15px;">Personal</a>
-        <a href="projects-free.html" target="contentFrame" style="margin-left: 15px;">Free-Time</a>
+
+      <details class="dropdown">
+        <summary>
+          <a href="projects.html" target="contentFrame">Projects</a>
+        </summary>
+        <a href="projects-eng.html" target="contentFrame" class="subproject">Engineering</a>
+        <a href="projects-personal.html" target="contentFrame" class="subproject">Personal</a>
+        <a href="projects-free.html" target="contentFrame" class="subproject">Free-Time</a>
       </details>
-    
+
       <a href="contact.html" target="contentFrame">Contact</a>
+    </div>
+
+    <div class="content">
+      <iframe name="contentFrame" src="landing.html"></iframe>
     </div>
   </div>
 
