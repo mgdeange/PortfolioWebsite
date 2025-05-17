@@ -84,6 +84,7 @@
       font-weight: bold;
       height: 100vh; /* Ensure it fills the whole screen */
       background: linear-gradient(to bottom, #65a843, #4e8c31); /* darkens at bottom */
+      position: relative;
     }
     
     .sidebar-overlay {
@@ -99,7 +100,6 @@
     }
 
     .sidebar a {
-      position: relative;
       display: block;
       margin: 10px 0;
       text-decoration: none;
@@ -107,18 +107,7 @@
       font-weight: bold;
       font-size: 20px;
       text-transform: uppercase;
-      padding-bottom: 8px;
-      border-bottom: none; /* remove default full-width underline */
-    }
-    
-    .sidebar a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;          /* adjust length of underline */
-      height: 2px;
-      background-color: black;
+      border-bottom: 2px solid white;
     }
 
     .sidebar a:hover {
