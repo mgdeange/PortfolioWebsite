@@ -12,14 +12,16 @@
       height: 100vh;
     }
 
+    /* Top Bar */
     .topbar {
-      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background-color: black;
       color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 15px;
+      padding: 10px 20px;
+      height: 60px;
+      box-sizing: border-box;
       text-transform: uppercase;
     }
 
@@ -33,6 +35,7 @@
       position: relative;
       display: flex;
       align-items: center;
+      margin-right: 40px;
     }
     
     .topbar .search-box input {
@@ -212,6 +215,38 @@
       <iframe name="contentFrame" src="landing.html"></iframe>
     </div>
   </div>
+
+  <script>
+    function handleSearch(event) {
+      event.preventDefault();
+      const query = document.getElementById('searchInput').value.toLowerCase();
+
+      const pages = {
+        "intro": "landing.html",
+        "home": "landing.html",
+        "about": "about.html",
+        "bio": "about.html",
+        "contact": "contact.html",
+        "projects": "projects.html",
+        "engineering": "projects-eng.html",
+        "eng": "projects-eng.html",
+        "meche": "projects-eng.html",
+        "personal": "projects-personal.html",
+        "fun": "projects-personal.html",
+        "free": "projects-free.html",
+        "hobby": "projects-free.html"
+      };
+
+      if (pages[query]) {
+        window.frames["contentFrame"].location.href = pages[query];
+      } else {
+        alert("No matching page found.");
+      }
+
+      return false;
+    }
+  </script>
+
 
 </body>
 </html>
