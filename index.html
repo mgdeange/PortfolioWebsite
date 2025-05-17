@@ -85,6 +85,18 @@
       height: 100vh; /* Ensure it fills the whole screen */
       background: linear-gradient(to bottom, #65a843, #4e8c31); /* darkens at bottom */
     }
+    
+    .sidebar-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;        /* or a fixed width */
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none; /* ensures it doesn’t interfere with clicks */
+      opacity: 0.3;        /* control visibility */
+      mix-blend-mode: screen; /* or lighten, depending on effect */
+    }
 
     .sidebar a {
       position: relative;
@@ -210,6 +222,7 @@
   <!-- Main Layout -->
   <div class="main">
     <div class="sidebar">
+      <img src="sidebar.png" class="sidebar-overlay" alt="">
       <a href="landing.html" target="contentFrame">Intro</a>
       <a href="about.html" target="contentFrame">About Me</a>
       <a href="contact.html" target="contentFrame">Contact Me</a>
