@@ -61,6 +61,17 @@
       flex-grow: 1;
     }
 
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    
+    .container {
+      display: flex;
+      height: 100vh; /* Full viewport height */
+    }
+
     .sidebar {
       width: 175px;
       background-color: #5FA239;
@@ -68,6 +79,8 @@
       padding-top: 10px;
       color: white;
       font-weight: bold;
+      height: 100vh; /* Ensure it fills the whole screen */
+      background: linear-gradient(to bottom, #65a843, #4e8c31); /* darkens at bottom */
     }
 
     .sidebar a {
@@ -136,15 +149,45 @@
     }
   </style>
 </head>
+
+<!-- Search Script -->
+<script>
+  function handleSearch(event) {
+    event.preventDefault(); // Prevent actual page reload
+    const query = document.getElementById('searchInput').value.toLowerCase();
+
+    // Mapping of keywords to pages
+    const pages = {
+      "about": "about.html",
+      "contact": "contact.html",
+      "engineering": "projects-eng.html",
+      "personal": "projects-personal.html",
+      "free-time": "projects-free.html",
+      "projects": "projects.html",
+      "landing": "landing.html"
+    };
+
+    const match = pages[query];
+
+    if (match) {
+      window.frames["contentFrame"].location.href = match;
+    } else {
+      alert("No matching page found!");
+    }
+
+    return false;
+  }
+</script>
+  
 <body>
 
   <!-- Top Bar -->
   <div class="topbar">
     <div class="site-name">Engineering Portfolio</div>
-    <div class="search-box">
+    <form class="search-box" onsubmit="return handleSearch(event)">
       <span class="search-icon">🔎︎</span>
-      <input type="text" placeholder="Search..." />
-    </div>
+      <input type="text" id="searchInput" placeholder="Search...">
+    </form>
     <div class="tagline">Michaela De Angelis Werner | mgdeange@asu.edu | 480-232-5506</div>
   </div>
 
