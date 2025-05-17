@@ -76,18 +76,18 @@
     }
 
     .sidebar {
-      position: relative;
       width: 175px;
-      background-color: #5FA239;
+      height: 100vh;
+      position: relative;
       padding-left: 25px;
       padding-top: 10px;
       color: white;
       font-weight: bold;
-      height: 100vh; /* Ensure it fills the whole screen */
-      
-      /*Gradient with a Mask*/
-      background: linear-gradient(to bottom, #65a843, #4e8c31); /* darkens at bottom */
-      
+      overflow: hidden;
+    
+      background: linear-gradient(to bottom, #65a843, #4e8c31);
+    
+      /* Apply mask */
       -webkit-mask-image: url('sidebar.png');
       -webkit-mask-repeat: no-repeat;
       -webkit-mask-size: cover;
@@ -95,9 +95,6 @@
       mask-image: url('sidebar.png');
       mask-repeat: no-repeat;
       mask-size: cover;
-
-      overflow: hidden;
-      z-index: 1;
     }
     
     .sidebar-overlay {
