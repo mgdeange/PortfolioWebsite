@@ -84,7 +84,18 @@
       color: white;
       font-weight: bold;
       height: 100vh; /* Ensure it fills the whole screen */
+      
+      /*Gradient with a Mask*/
       background: linear-gradient(to bottom, #65a843, #4e8c31); /* darkens at bottom */
+      
+      -webkit-mask-image: url('sidebar.png');
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+    
+      mask-image: url('sidebar.png');
+      mask-repeat: no-repeat;
+      mask-size: cover;
+
       overflow: hidden;
       z-index: 1;
     }
@@ -97,7 +108,7 @@
       height: 100%;
       object-fit: cover;
       pointer-events: none; /* ensures it doesn’t interfere with clicks */
-      opacity: 0.3;        /* control visibility */
+      opacity: 1;        /* control visibility */
       mix-blend-mode: screen; /* or lighten, depending on effect */
       z-index: 0;
     }
@@ -215,7 +226,6 @@
   <!-- Main Layout -->
   <div class="main">
     <div class="sidebar">
-      <img src="sidebar.png" class="sidebar-overlay" alt="">
       <a href="landing.html" target="contentFrame">Intro</a>
       <a href="about.html" target="contentFrame">About Me</a>
       <a href="contact.html" target="contentFrame">Contact Me</a>
