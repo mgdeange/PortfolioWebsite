@@ -13,7 +13,7 @@
     }
 
     .topbar {
-      height: 75px;
+      height: 70px;
       background-color: black;
       color: white;
       display: flex;
@@ -29,9 +29,26 @@
       
     }
 
+    .topbar .search-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    
     .topbar .search-box input {
-      padding: 5px;
+      padding: 8px 12px 8px 32px; /* left padding for icon */
+      font-size: 16px;
+      border-radius: 6px;
       border: none;
+      width: 200px;
+    }
+    
+    .topbar .search-icon {
+      position: absolute;
+      left: 10px;
+      color: #666;
+      font-size: 16px;
+      pointer-events: none; /* makes the icon non-clickable */
     }
 
     .topbar .tagline {
@@ -125,7 +142,8 @@
   <div class="topbar">
     <div class="site-name">Engineering Portfolio</div>
     <div class="search-box">
-      <input type="text" placeholder="Search (placeholder)">
+      <span class="search-icon">🔎︎</span>
+      <input type="text" placeholder="Search..." />
     </div>
     <div class="tagline">Michaela De Angelis Werner | mgdeange@asu.edu | 480-232-5506</div>
   </div>
