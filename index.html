@@ -77,24 +77,14 @@
 
     .sidebar {
       width: 175px;
-      height: 100vh;
-      position: relative;
+      background-color: #5FA239;
       padding-left: 25px;
       padding-top: 10px;
       color: white;
       font-weight: bold;
-      overflow: hidden;
-    
-      background: linear-gradient(to bottom, #65a843, #4e8c31);
-    
-      /* Apply mask */
-      -webkit-mask-image: url('sidebar.png');
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-size: cover;
-    
-      mask-image: url('sidebar.png');
-      mask-repeat: no-repeat;
-      mask-size: cover;
+      height: 100vh; /* Ensure it fills the whole screen */
+      background: linear-gradient(to bottom, #65a843, #4e8c31); /* darkens at bottom */
+      position: relative;
     }
     
     .sidebar-overlay {
@@ -105,9 +95,8 @@
       height: 100%;
       object-fit: cover;
       pointer-events: none; /* ensures it doesn’t interfere with clicks */
-      opacity: 1;        /* control visibility */
+      opacity: 0.3;        /* control visibility */
       mix-blend-mode: screen; /* or lighten, depending on effect */
-      z-index: 0;
     }
 
     .sidebar a {
@@ -119,7 +108,6 @@
       font-size: 20px;
       text-transform: uppercase;
       border-bottom: 2px solid white;
-      z-index: 2;
     }
 
     .sidebar a:hover {
@@ -223,6 +211,7 @@
   <!-- Main Layout -->
   <div class="main">
     <div class="sidebar">
+      <img src="sidebar.png" class="sidebar-overlay" alt="">
       <a href="landing.html" target="contentFrame">Intro</a>
       <a href="about.html" target="contentFrame">About Me</a>
       <a href="contact.html" target="contentFrame">Contact Me</a>
