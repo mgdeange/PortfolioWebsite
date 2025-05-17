@@ -76,6 +76,7 @@
     }
 
     .sidebar {
+      position: relative;
       width: 175px;
       background-color: #5FA239;
       padding-left: 25px;
@@ -84,7 +85,8 @@
       font-weight: bold;
       height: 100vh; /* Ensure it fills the whole screen */
       background: linear-gradient(to bottom, #65a843, #4e8c31); /* darkens at bottom */
-      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
     
     .sidebar-overlay {
@@ -96,7 +98,8 @@
       object-fit: cover;
       pointer-events: none; /* ensures it doesn’t interfere with clicks */
       opacity: 0.3;        /* control visibility */
-      mix-blend-mode: screen; /* or lighten, depending on effect */
+      mix-blend-mode: normal; /* or lighten, depending on effect */
+      z-index: 0;
     }
 
     .sidebar a {
