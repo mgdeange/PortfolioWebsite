@@ -28,7 +28,6 @@
     .topbar .site-name {
       font-weight: bold;
       font-size: 20px;
-      
     }
 
     .topbar .search-box {
@@ -75,28 +74,58 @@
       height: 100vh; /* Full viewport height */
     }
 
+    /* Improved sidebar styling */
     .sidebar {
       width: 175px;
-      background-color: #5FA239;
       padding-left: 25px;
       padding-top: 10px;
       color: white;
       font-weight: bold;
       height: 100vh; /* Ensure it fills the whole screen */
-      background: linear-gradient(to bottom, #65a843, #4e8c31); /* darkens at bottom */
       position: relative;
+      overflow: hidden;
+      background-color: #5FA239; /* Base color fallback */
+      z-index: 0;
     }
     
-    .sidebar-overlay {
+    /* Base gradient layer */
+    .sidebar::before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;        /* or a fixed width */
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none; /* ensures it doesn’t interfere with clicks */
-      opacity: 0.3;        /* control visibility */
-      mix-blend-mode: screen; /* or lighten, depending on effect */
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0;
+      background: #5FA239;
+      z-index: -1;
+    }
+    
+    /* Textured overlay with mask */
+    .sidebar::after {
+      content: '';
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(95, 162, 57, 1), rgba(65, 112, 42, 1));
+      mask-image: url('sidebar.png');
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      mask-position: center;
+      -webkit-mask-image: url('sidebar.png');
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+      -webkit-mask-position: center;
+      z-index: 0;
+    }
+    
+    /* Ensure links and content are above backgrounds */
+    .sidebar a,
+    .sidebar details,
+    .sidebar summary {
+      position: relative;
+      z-index: 2;
     }
 
     .sidebar a {
@@ -108,10 +137,6 @@
       font-size: 20px;
       text-transform: uppercase;
       border-bottom: 2px solid white;
-    }
-
-    .sidebar a:hover {
-      text-decoration: underline;
     }
 
     /* Dropdown container */
@@ -211,7 +236,6 @@
   <!-- Main Layout -->
   <div class="main">
     <div class="sidebar">
-      <img src="sidebar.png" class="sidebar-overlay" alt="">
       <a href="landing.html" target="contentFrame">Intro</a>
       <a href="about.html" target="contentFrame">About Me</a>
       <a href="contact.html" target="contentFrame">Contact Me</a>
@@ -261,7 +285,6 @@
       return false;
     }
   </script>
-
 
 </body>
 </html>
