@@ -75,6 +75,7 @@
       height: 100vh; /* Full viewport height */
     }
 
+    
     /* Improved sidebar styling */
     .sidebar {
       width: 175px;
@@ -220,7 +221,6 @@
     return false;
   }
 </script>
-  
 <body>
 
   <!-- Top Bar -->
@@ -238,6 +238,7 @@
     <div class="sidebar">
       <a href="landing.html" target="contentFrame">Intro</a>
       <a href="contact.html" target="contentFrame">Contact Me</a>
+      <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
       
       <details class="dropdown">
         <summary>
@@ -247,14 +248,15 @@
         <a href="projects-personal.html" target="contentFrame" class="subproject">Personal</a>
         <a href="projects-free.html" target="contentFrame" class="subproject">Work</a>
       </details>
-      <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
     </div>
 
+    <!-- Starting Layout -->
     <div class="content">
       <iframe name="contentFrame" src="landing.html"></iframe>
     </div>
   </div>
 
+  <!-- Search Script (but in the website) -->
   <script>
     function handleSearch(event) {
       event.preventDefault();
