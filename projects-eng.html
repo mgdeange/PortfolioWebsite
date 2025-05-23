@@ -102,10 +102,9 @@
     }
   </style>
 </head>
-
 <body>
-  <h1>Projects</h1>
-  <p> Here are some of the projects I've done during my time as a student at ASU Polytechnic</p>
+  <h2>Projects</h2>
+  <p> Here are some of the projects I've done as a student at ASU Polytechnic.</p>
   <div class="category">
     <h2 class="category-title">Engineering</h2>
     <div class="project-grid">
@@ -141,3 +140,14 @@
           <div class="view-project">View Project</div>
         </div>
       </div>
+    </div>
+  </div>
+  
+  <script>
+    function loadProject(projectPage) {
+      // This function will tell the parent window to load the project page in the iframe
+      window.parent.frames["contentFrame"].location.href = projectPage;
+    }
+  </script>
+</body>
+</html>
