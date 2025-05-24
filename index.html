@@ -5,8 +5,12 @@
   <title>Engineering Portfolio</title>
   <style>
     html, body {
-      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* Keep this here now to prevent outer scroll */
     }
+    
     body {
       margin: 0;
       font-family: sans-serif;
@@ -187,12 +191,15 @@
     .content {
       flex-grow: 1;
       height: 100%;
+      overflow: hidden; /* prevent double scrollbar */
+      position: relative;
     }
 
     iframe {
       width: 100%;
       height: 100%;
       border: none;
+      display: block;
     }
   </style>
 </head>
