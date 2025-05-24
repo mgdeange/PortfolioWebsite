@@ -4,17 +4,30 @@
   <meta charset="UTF-8">
   <title>Projects</title>
   <style>
+    /* CRITICAL: Remove all margins and padding from html/body */
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
+      /* This allows overflow but with custom scrollbar */
+      overflow-x: hidden;
       overflow-y: auto;
     }
+    
     body {
       font-family: sans-serif;
+      /* Remove padding from body - content will handle its own spacing */
+      padding: 0;
+      margin: 0;
+    }
+    
+    /* Container for all content with proper spacing */
+    .page-container {
       padding: 20px;
       max-width: 1200px;
       margin: 0 auto;
+      /* Add some bottom padding to ensure content doesn't get cut off */
+      padding-bottom: 40px;
     }
     
     h1 {
@@ -107,37 +120,35 @@
       display: inline-block;
     }
     
-    /* Default for WebKit browsers (Chrome, Edge, Safari) */
-    .blocky-scrollbar {
-      scrollbar-width: auto; /* fallback */
-      scrollbar-color: initial;
-      overflow-y: scroll;
-    }
-    
-    .blocky-scrollbar::-webkit-scrollbar {
+    /* Custom scrollbar - this will now reach the screen edge */
+    body::-webkit-scrollbar {
       width: 12px;
       background-color: black;
     }
     
-    .blocky-scrollbar::-webkit-scrollbar-thumb {
+    body::-webkit-scrollbar-thumb {
       background-color: green;
       border-radius: 0;
       border: 2px solid black;
     }
     
-    /* Firefox-specific override */
-    @supports (-moz-appearance: none) {
-      .blocky-scrollbar {
-        scrollbar-width: thin;
-        scrollbar-color: green black;
-      }
+    body::-webkit-scrollbar-track {
+      background-color: black;
+    }
+    
+    /* Firefox scrollbar */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: green black;
     }
     
   </style>
 </head>
-<body class="blocky-scrollbar">
+<body>
+  <div class="page-container">
     <h2 class="category-title">Projects</h2>
-    <p> Here are some of the projects I've done, including both academic and non-academic projects.</p>
+    <p>Here are some of the projects I've done, including both academic and non-academic projects.</p>
+    
     <div class="category">
       <h2 class="category-title">Engineering</h2>
       <div class="project-grid">
@@ -233,7 +244,6 @@
   
   <script>
     function loadProject(projectPage) {
-      // This function will tell the parent window to load the project page in the iframe
       window.parent.frames["contentFrame"].location.href = projectPage;
     }
   </script>
