@@ -8,7 +8,7 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden; /* Keep this here now to prevent outer scroll */
+      overflow: hidden;
     }
     
     body {
@@ -45,7 +45,7 @@
     }
     
     .topbar .search-box input {
-      padding: 8px 12px 8px 32px; /* left padding for icon */
+      padding: 8px 12px 8px 32px;
       font-size: 16px;
       border-radius: 6px;
       border: none;
@@ -57,7 +57,7 @@
       left: 10px;
       color: #666;
       font-size: 16px;
-      pointer-events: none; /* makes the icon non-clickable */
+      pointer-events: none;
     }
 
     .topbar .tagline {
@@ -68,36 +68,24 @@
     .main {
       display: flex;
       flex-grow: 1;
-      height: 100%;
-    }
-
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+      height: calc(100vh - 80px); /* Account for topbar height */
     }
     
-    .container {
-      display: flex;
-      height: 100vh; /* Full viewport height */
-    }
-
-    
-    /* Improved sidebar styling */
+    /* Sidebar styling */
     .sidebar {
       width: 175px;
       padding-left: 25px;
       padding-top: 10px;
       color: white;
       font-weight: bold;
-      height: 100vh; /* Ensure it fills the whole screen */
+      height: 100%; /* Changed from 100vh to 100% */
       position: relative;
       overflow: hidden;
-      background-color: #5FA239; /* Base color fallback */
+      background-color: #5FA239;
       z-index: 0;
+      flex-shrink: 0;
     }
     
-    /* Base gradient layer */
     .sidebar::before {
       content: '';
       position: absolute;
@@ -109,7 +97,6 @@
       z-index: -1;
     }
     
-    /* Textured overlay with mask */
     .sidebar::after {
       content: '';
       position: absolute;
@@ -129,7 +116,6 @@
       z-index: 0;
     }
     
-    /* Ensure links and content are above backgrounds */
     .sidebar a,
     .sidebar details,
     .sidebar summary {
@@ -148,7 +134,6 @@
       border-bottom: 2px solid white;
     }
 
-    /* Dropdown container */
     .sidebar details.dropdown {
       margin: 10px 0;
     }
@@ -160,7 +145,6 @@
       position: relative;
     }
 
-    /* Insert arrow */
     .sidebar details.dropdown summary::before {
       content: ">";
       position: absolute;
@@ -169,71 +153,52 @@
       transition: transform 0.2s ease;
     }
 
-    /* Rotate arrow when open */
     .sidebar details[open].dropdown summary::before {
       transform: rotate(90deg);
     }
 
-    /* Link inside summary */
     .sidebar summary a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
 
-    /* Sub-links */
     .sidebar details.dropdown a.subproject {
       font-weight: bold;
       font-size: 15px;
       margin-left: 15px;
     }
 
+    /* KEY CHANGES HERE - Content area positioning */
     .content {
       flex-grow: 1;
       height: 100%;
-      overflow: hidden; /* prevent double scrollbar */
+      overflow: hidden;
       position: relative;
+      /* Remove any margin/padding that could create gaps */
+      margin: 0;
+      padding: 0;
     }
 
+    /* Make iframe extend to absolute screen edge */
     iframe {
-      width: 100%;
+      width: calc(100% + 0px); /* No adjustment needed if no gaps */
       height: 100%;
       border: none;
       display: block;
+      margin: 0;
+      padding: 0;
+      /* Position it to extend to the very edge */
       position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
     }
   </style>
 </head>
 
-<!-- Search Script -->
-<script>
-  function handleSearch(event) {
-    event.preventDefault(); // Prevent actual page reload
-    const query = document.getElementById('searchInput').value.toLowerCase();
-
-    // Mapping of keywords to pages
-    const pages = {
-      "contact": "contact.html",
-      "engineering": "projects-eng.html",
-      "personal": "projects-personal.html",
-      "work": "projects-work.html",
-      "projects": "projects.html",
-      "landing": "landing.html"
-    };
-
-    const match = pages[query];
-
-    if (match) {
-      window.frames["contentFrame"].location.href = match;
-    } else {
-      alert("No matching page found!");
-    }
-
-    return false;
-  }
-</script>
 <body>
-
   <!-- Top Bar -->
   <div class="topbar">
     <div class="site-name">Engineering Portfolio</div>
@@ -261,13 +226,13 @@
       </details>
     </div>
 
-    <!-- Starting Layout -->
+    <!-- Content Container -->
     <div class="content">
       <iframe name="contentFrame" src="landing.html"></iframe>
     </div>
   </div>
 
-  <!-- Search Script (but in the website) -->
+  <!-- Search Script -->
   <script>
     function handleSearch(event) {
       event.preventDefault();
