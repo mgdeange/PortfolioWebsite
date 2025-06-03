@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Projects</title>
 
     <style>
@@ -14,28 +14,28 @@
         overflow-x: hidden;
         overflow-y: auto;
       }
-      
+
       body {
         font-family: sans-serif;
         padding: 0;
         margin: 0;
       }
-      
+
       /* Container for all content with proper spacing */
       .page-container {
         padding: 50px 100px 100px 100px;
         margin: 0 auto;
       }
-      
+
       h1 {
         margin-bottom: 30px;
         font-size: 32px;
       }
-      
+
       .category {
         margin-bottom: 40px;
       }
-      
+
       .category-title {
         font-size: 24px;
         text-transform: uppercase;
@@ -51,7 +51,7 @@
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 20px;
       }
-      
+
       .project-card {
         border-radius: 8px;
         overflow: hidden;
@@ -61,11 +61,11 @@
         transition: border-color 0.3s ease;
         cursor: pointer;
       }
-      
+
       .project-card:hover {
         border-color: #5FA239;
       }
-      
+
       .project-image {
         height: 200px;
         width: 100%;
@@ -73,13 +73,13 @@
         background-size: cover;
         background-position: center;
       }
-      
+
       .project-title {
         padding: 15px;
         font-weight: bold;
         background-color: white;
       }
-      
+
       .project-overlay {
         position: absolute;
         top: 0;
@@ -96,16 +96,16 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      
+
       .project-card:hover .project-overlay {
         opacity: 1;
       }
-      
+
       .project-description {
         font-size: 14px;
         line-height: 1.4;
       }
-      
+
       .view-project {
         margin-top: 15px;
         background-color: white;
@@ -117,134 +117,198 @@
         cursor: pointer;
         display: inline-block;
       }
-      
+
       /* Custom Scrollbar */
       body::-webkit-scrollbar {
         width: 12px;
         background-color: black;
       }
-      
+
       body::-webkit-scrollbar-thumb {
         background-color: #5FA239;
         border-radius: 0;
         border: 2px solid black;
       }
-      
+
       body::-webkit-scrollbar-track {
         background-color: black;
       }
-      
+
       /* Firefox Scrollbar */
       html {
         scrollbar-width: thin;
         scrollbar-color: #5FA239 black;
       }
-      
     </style>
-</head>
-<body>
-  <div class="page-container">
-    <h2 class="category-title">Projects</h2>
-    <p>Here are some of the projects I've done, including both academic and non-academic projects.</p>
-    
-    <div class="category">
-      <h2 class="category-title">Engineering</h2>
-      <div class="project-grid">
-        <div class="project-card" onclick="loadProject('projects/engineering-project1.html')">
-          <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
-          <div class="project-title">EGR 401/402 Project: Hazardous Material Transport</div>
-          <div class="project-overlay">
-            <div class="project-description">
-              Designed and built an industrial-grade pneumatic actuation system to transfer hazardous materials within an enclosed environment.
-            </div>
-            <div class="view-project">View Project</div>
-          </div>
-        </div>
-        
-        <div class="project-card" onclick="loadProject('projects/engineering-project2.html')">
-          <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
-          <div class="project-title">EGR 314 Project: Mobile Plant Caretaker</div>
-          <div class="project-overlay">
-            <div class="project-description">
-              Designed and built a battery-powered portable device that autonomously moves a plant in and out of shaded housing according to temperature and humidity data.
-            </div>
-            <div class="view-project">View Project</div>
-          </div>
-        </div>
-        
-        <div class="project-card" onclick="loadProject('projects/engineering-project3.html')">
-          <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
-          <div class="project-title">LANL Hackathon: Hazardous Material Handling Automation</div>
-          <div class="project-overlay">
-            <div class="project-description">
-              Designed and built a hypothetical method of visual inspection, verification, and disposal of hazardous materials that would be safer for both the operator and the equipment. 
-            </div>
-            <div class="view-project">View Project</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="category">
-      <h2 class="category-title">Personal</h2>
-      <div class="project-grid">
-        <div class="project-card" onclick="loadProject('projects/personal-project1.html')">
-          <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
-          <div class="project-title">3D Modeling: 2D to 3D Adaptation</div>
-          <div class="project-overlay">
-            <div class="project-description">
-              Developing a method to convert a heavily stylized 2D character to 3D, while still maintaining the original style. 
-            </div>
-            <div class="view-project">View Project</div>
-          </div>
-        </div>
-        
-        <div class="project-card" onclick="loadProject('projects/personal-project2.html')">
-          <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
-          <div class="project-title">Miscellaneous Character Design Notes</div>
-          <div class="project-overlay">
-            <div class="project-description">
-              A repository of some character designs that I've done and the thought processes for how I got to them. 
-            </div>
-            <div class="view-project">View Project</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="category">
-      <h2 class="category-title">Work</h2>
-      <div class="project-grid">
-        <div class="project-card" onclick="loadProject('projects/work-project1.html')">
-          <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
-          <div class="project-title">Lab Handbook and Website</div>
-          <div class="project-overlay">
-            <div class="project-description">
-              Designed both a Google Docs handbook describing the various standard operating procedures of the Electronics Lab at Peralta, as well as developed a website dedicated to the submission guidelines for PCB manufacturing for the lab.    
-            </div>
-            <div class="view-project">View Project</div>
-          </div>
-        </div>
-        
-        <div class="project-card" onclick="loadProject('projects/work-project2.html')">
-          <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
-          <div class="project-title">Convention Group Website</div>
-          <div class="project-overlay">
-            <div class="project-description">
-              Designed a mobile-friendly website for a convention group that showcases the schedule, location, and information about various panel and off-panel activities.  
-            </div>
-            <div class="view-project">View Project</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <script>
-    function loadProject(projectPage) {
-      window.parent.frames["contentFrame"].location.href = projectPage;
-    }
-  </script>
+  </head>
+  <body>
+    <div class="page-container">
+      <h2 class="category-title">Projects</h2>
+      <p>
+        Here are some of the projects I've done, including both academic and
+        non-academic projects.
+      </p>
 
-</body>
+      <div class="category">
+        <h2 class="category-title">Engineering</h2>
+        <div class="project-grid">
+          <div
+            class="project-card"
+            onclick="loadProject('projects/engineering-project1.html')"
+          >
+            <div
+              class="project-image"
+              style="background-image: url('/api/placeholder/300/200');"
+            ></div>
+            <div class="project-title">
+              EGR 401/402 Project: Hazardous Material Transport
+            </div>
+            <div class="project-overlay">
+              <div class="project-description">
+                Designed and built an industrial-grade pneumatic actuation
+                system to transfer hazardous materials within an enclosed
+                environment.
+              </div>
+              <div class="view-project">View Project</div>
+            </div>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="loadProject('projects/engineering-project2.html')"
+          >
+            <div
+              class="project-image"
+              style="background-image: url('/api/placeholder/300/200');"
+            ></div>
+            <div class="project-title">
+              EGR 314 Project: Mobile Plant Caretaker
+            </div>
+            <div class="project-overlay">
+              <div class="project-description">
+                Designed and built a battery-powered portable device that
+                autonomously moves a plant in and out of shaded housing
+                according to temperature and humidity data.
+              </div>
+              <div class="view-project">View Project</div>
+            </div>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="loadProject('projects/engineering-project3.html')"
+          >
+            <div
+              class="project-image"
+              style="background-image: url('/api/placeholder/300/200');"
+            ></div>
+            <div class="project-title">
+              LANL Hackathon: Hazardous Material Handling Automation
+            </div>
+            <div class="project-overlay">
+              <div class="project-description">
+                Designed and built a hypothetical method of visual inspection,
+                verification, and disposal of hazardous materials that would be
+                safer for both the operator and the equipment.
+              </div>
+              <div class="view-project">View Project</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <h2 class="category-title">Personal</h2>
+        <div class="project-grid">
+          <div
+            class="project-card"
+            onclick="loadProject('projects/personal-project1.html')"
+          >
+            <div
+              class="project-image"
+              style="background-image: url('/api/placeholder/300/200');"
+            ></div>
+            <div class="project-title">3D Modeling: 2D to 3D Adaptation</div>
+            <div class="project-overlay">
+              <div class="project-description">
+                Developing a method to convert a heavily stylized 2D character
+                to 3D, while still maintaining the original style.
+              </div>
+              <div class="view-project">View Project</div>
+            </div>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="loadProject('projects/personal-project2.html')"
+          >
+            <div
+              class="project-image"
+              style="background-image: url('/api/placeholder/300/200');"
+            ></div>
+            <div class="project-title">
+              Miscellaneous Character Design Notes
+            </div>
+            <div class="project-overlay">
+              <div class="project-description">
+                A repository of some character designs that I've done and the
+                thought processes for how I got to them.
+              </div>
+              <div class="view-project">View Project</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <h2 class="category-title">Work</h2>
+        <div class="project-grid">
+          <div
+            class="project-card"
+            onclick="loadProject('projects/work-project1.html')"
+          >
+            <div
+              class="project-image"
+              style="background-image: url('/api/placeholder/300/200');"
+            ></div>
+            <div class="project-title">Lab Handbook and Website</div>
+            <div class="project-overlay">
+              <div class="project-description">
+                Designed both a Google Docs handbook describing the various
+                standard operating procedures of the Electronics Lab at Peralta,
+                as well as developed a website dedicated to the submission
+                guidelines for PCB manufacturing for the lab.
+              </div>
+              <div class="view-project">View Project</div>
+            </div>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="loadProject('projects/work-project2.html')"
+          >
+            <div
+              class="project-image"
+              style="background-image: url('/api/placeholder/300/200');"
+            ></div>
+            <div class="project-title">Convention Group Website</div>
+            <div class="project-overlay">
+              <div class="project-description">
+                Designed a mobile-friendly website for a convention group that
+                showcases the schedule, location, and information about various
+                panel and off-panel activities.
+              </div>
+              <div class="view-project">View Project</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function loadProject(projectPage) {
+        window.parent.frames["contentFrame"].location.href = projectPage;
+      }
+    </script>
+  </body>
 </html>

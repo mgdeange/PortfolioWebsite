@@ -1,274 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8">
-  <title>Engineering Portfolio</title>
+    <meta charset="UTF-8" />
+    <title>Engineering Portfolio</title>
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-    
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    /* Top Bar */
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: black;
-      color: white;
-      padding: 10px 20px;
-      height: 60px;
-      box-sizing: border-box;
-      text-transform: uppercase;
-    }
-
-    .topbar .site-name {
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .topbar .search-box {
-      position: relative;
-      display: flex;
-      align-items: center;
-      margin-right: 40px;
-    }
-    
-    .topbar .search-box input {
-      padding: 8px 12px 8px 32px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: none;
-      width: 200px;
-    }
-    
-    .topbar .search-icon {
-      position: absolute;
-      left: 10px;
-      color: #666;
-      font-size: 16px;
-      pointer-events: none;
-    }
-
-    .topbar .tagline {
-      font-style: italic;
-      font-size: 14px;
-    }
-
-    .main {
-      display: flex;
-      flex-grow: 1;
-      height: calc(100vh - 80px); /* Account for topbar height */
-    }
-    
-    /* Sidebar Styling */
-    .sidebar {
-      width: 175px;
-      padding-left: 25px;
-      padding-top: 10px;
-      color: white;
-      font-weight: bold;
-      height: 100%; 
-      position: relative;
-      overflow: hidden;
-      background-color: #5FA239;
-      z-index: 0;
-      flex-shrink: 0;
-    }
-    
-    /* Sidebar Layer 1 (no gradient) */
-    .sidebar::before {
-      content: '';
-      position: absolute;
-      top: 0; 
-      left: 0; 
-      right: 0; 
-      bottom: 0;
-      background: #5FA239;
-      z-index: -1;
-    }
-    
-    /* Sidebar Layer 2 (masked gradient) */
-    .sidebar::after {
-      content: '';
-      position: absolute;
-      top: 0; 
-      left: 0; 
-      right: 0; 
-      bottom: 0;
-      background: linear-gradient(to bottom, rgba(95, 162, 57, 1), rgba(65, 112, 42, 1));
-      mask-image: url('img/sidebar.png');
-      mask-repeat: no-repeat;
-      mask-size: cover;
-      mask-position: center;
-      -webkit-mask-image: url('img/sidebar.png');
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-size: cover;
-      -webkit-mask-position: center;
-      z-index: 0;
-    }
-    
-    .sidebar a,
-    .sidebar details,
-    .sidebar summary {
-      position: relative;
-      z-index: 2;
-    }
-
-    .sidebar a {
-      display: block;
-      margin: 20px 0px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      text-transform: uppercase;
-      border-bottom: 2px solid white;
-    }
-
-    .sidebar details.dropdown {
-      margin: 10px 0;
-    }
-
-    .sidebar details.dropdown summary {
-      list-style: none;
-      cursor: pointer;
-      padding-left: 15px;
-      position: relative;
-    }
-
-    .sidebar details.dropdown summary::before {
-      content: ">";
-      position: absolute;
-      left: 0;
-      font-weight: bold;
-      transition: transform 0.2s ease;
-    }
-
-    .sidebar details[open].dropdown summary::before {
-      transform: rotate(90deg);
-    }
-
-    .sidebar summary a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .sidebar details.dropdown a.subproject {
-      font-weight: bold;
-      font-size: 15px;
-      margin-left: 15px;
-    }
-
-    /* Content Positioning */
-    .content {
-      flex-grow: 1;
-      height: 100%;
-      overflow: hidden;
-      position: relative;
-      /* Remove any margin/padding that could create gaps */
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Make iframe extend to absolute screen edge */
-    iframe {
-      width: calc(100% + 0px); 
-      height: 100%;
-      border: none;
-      display: block;
-      margin: 0;
-      padding: 0;
-
-      /* Position it to extend to the very edge */
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Top Bar -->
-  <div class="topbar">
-    <div class="site-name">Engineering Portfolio</div>
-
-    <!-- Search Bar -->
-    <form class="search-box" onsubmit="return handleSearch(event)">
-      <span class="search-icon">🔎︎</span>
-      <input type="text" id="searchInput" placeholder="Search...">
-    </form>
-    <div class="tagline">  Michaela De Angelis Werner  |  mgdeange@asu.edu  |  480-232-5506  </div>
-  </div>
-
-  <!-- Main Layout -->
-  <div class="main">
-    <div class="sidebar">
-      <a href="content/landing.html" target="contentFrame">Intro</a>
-      <a href="content/contact.html" target="contentFrame">Contact Me</a>
-      <a href="img/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-      
-      <details class="dropdown">
-        <summary>
-          <a href="content/projects.html" target="contentFrame">Projects</a>
-        </summary>
-        <a href="content/projects-eng.html" target="contentFrame" class="subproject">Engineering</a>
-        <a href="content/projects-personal.html" target="contentFrame" class="subproject">Personal</a>
-        <a href="content/projects-work.html" target="contentFrame" class="subproject">Work</a>
-      </details>
-    </div>
-
-    <!-- Content Container -->
-    <div class="content">
-      <iframe name="contentFrame" src="content/landing.html"></iframe>
-    </div>
-  </div>
-
-  <!-- Search Script -->
-  <script>
-    function handleSearch(event) {
-      event.preventDefault();
-      const query = document.getElementById('searchInput').value.toLowerCase();
-
-      const pages = {
-        "intro": "content/landing.html",
-        "home": "content/landing.html",
-        "about": "content/about.html",
-        "bio": "content/about.html",
-        "contact": "content/contact.html",
-        "projects": "content/projects.html",
-        "engineering": "content/projects-eng.html",
-        "eng": "content/projects-eng.html",
-        "meche": "content/projects-eng.html",
-        "personal": "content/projects-personal.html",
-        "fun": "content/projects-personal.html",
-        "work": "content/projects-work.html",
-        "job": "content/projects-work.html"
-      };
-
-      if (pages[query]) {
-        window.frames["contentFrame"].location.href = pages[query];
-      } else {
-        alert("No matching page found.");
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
       }
 
-      return false;
-    }
-  </script>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
 
-</body>
+      /* Top Bar */
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        height: 60px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+      }
+
+      .topbar .site-name {
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .topbar .search-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+      }
+
+      .topbar .search-box input {
+        padding: 8px 12px 8px 32px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: none;
+        width: 200px;
+      }
+
+      .topbar .search-icon {
+        position: absolute;
+        left: 10px;
+        color: #666;
+        font-size: 16px;
+        pointer-events: none;
+      }
+
+      .topbar .tagline {
+        font-style: italic;
+        font-size: 14px;
+      }
+
+      .main {
+        display: flex;
+        flex-grow: 1;
+        height: calc(100vh - 80px); /* Account for topbar height */
+      }
+
+      /* Sidebar Styling */
+      .sidebar {
+        width: 175px;
+        padding-left: 25px;
+        padding-top: 10px;
+        color: white;
+        font-weight: bold;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        background-color: #5FA239;
+        z-index: 0;
+        flex-shrink: 0;
+      }
+
+      /* Sidebar Layer 1 (no gradient) */
+      .sidebar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #5FA239;
+        z-index: -1;
+      }
+
+      /* Sidebar Layer 2 (masked gradient) */
+      .sidebar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(95, 162, 57, 1), rgba(65, 112, 42, 1));
+        mask-image: url('img/sidebar.png');
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        mask-position: center;
+        -webkit-mask-image: url('img/sidebar.png');
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: cover;
+        -webkit-mask-position: center;
+        z-index: 0;
+      }
+
+      .sidebar a,
+      .sidebar details,
+      .sidebar summary {
+        position: relative;
+        z-index: 2;
+      }
+
+      .sidebar a {
+        display: block;
+        margin: 20px 0px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        text-transform: uppercase;
+        border-bottom: 2px solid white;
+      }
+
+      .sidebar details.dropdown {
+        margin: 10px 0;
+      }
+
+      .sidebar details.dropdown summary {
+        list-style: none;
+        cursor: pointer;
+        padding-left: 15px;
+        position: relative;
+      }
+
+      .sidebar details.dropdown summary::before {
+        content: ">";
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        transition: transform 0.2s ease;
+      }
+
+      .sidebar details[open].dropdown summary::before {
+        transform: rotate(90deg);
+      }
+
+      .sidebar summary a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .sidebar details.dropdown a.subproject {
+        font-weight: bold;
+        font-size: 15px;
+        margin-left: 15px;
+      }
+
+      /* Content Positioning */
+      .content {
+        flex-grow: 1;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        /* Remove any margin/padding that could create gaps */
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Make iframe extend to absolute screen edge */
+      iframe {
+        width: calc(100% + 0px);
+        height: 100%;
+        border: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        /* Position it to extend to the very edge */
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top Bar -->
+    <div class="topbar">
+      <div class="site-name">Engineering Portfolio</div>
+
+      <!-- Search Bar -->
+      <form class="search-box" onsubmit="return handleSearch(event)">
+        <span class="search-icon">🔎︎</span>
+        <input type="text" id="searchInput" placeholder="Search..." />
+      </form>
+      <div class="tagline">
+        Michaela De Angelis Werner | mgdeange@asu.edu | 480-232-5506
+      </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="main">
+      <div class="sidebar">
+        <a href="content/landing.html" target="contentFrame">Intro</a>
+        <a href="content/contact.html" target="contentFrame">Contact Me</a>
+        <a href="img/resume.pdf" target="_blank" rel="noopener noreferrer"
+          >Resume</a
+        >
+
+        <details class="dropdown">
+          <summary>
+            <a href="content/projects.html" target="contentFrame">Projects</a>
+          </summary>
+          <a
+            href="content/projects-eng.html"
+            target="contentFrame"
+            class="subproject"
+            >Engineering</a
+          >
+          <a
+            href="content/projects-personal.html"
+            target="contentFrame"
+            class="subproject"
+            >Personal</a
+          >
+          <a
+            href="content/projects-work.html"
+            target="contentFrame"
+            class="subproject"
+            >Work</a
+          >
+        </details>
+      </div>
+
+      <!-- Content Container -->
+      <div class="content">
+        <iframe name="contentFrame" src="content/landing.html"></iframe>
+      </div>
+    </div>
+
+    <!-- Search Script -->
+    <script>
+      function handleSearch(event) {
+        event.preventDefault();
+        const query = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+
+        const pages = {
+          intro: "content/landing.html",
+          home: "content/landing.html",
+          about: "content/about.html",
+          bio: "content/about.html",
+          contact: "content/contact.html",
+          projects: "content/projects.html",
+          engineering: "content/projects-eng.html",
+          eng: "content/projects-eng.html",
+          meche: "content/projects-eng.html",
+          personal: "content/projects-personal.html",
+          fun: "content/projects-personal.html",
+          work: "content/projects-work.html",
+          job: "content/projects-work.html",
+        };
+
+        if (pages[query]) {
+          window.frames["contentFrame"].location.href = pages[query];
+        } else {
+          alert("No matching page found.");
+        }
+
+        return false;
+      }
+    </script>
+  </body>
 </html>

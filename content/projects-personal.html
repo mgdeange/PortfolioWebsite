@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8">
-  <title>Projects</title>
+    <meta charset="UTF-8" />
+    <title>Projects</title>
     <style>
       body {
         font-family: sans-serif;
         padding: 50px 100px 100px 100px;
         margin: 0 auto;
       }
-      
+
       h1 {
         margin-bottom: 30px;
         font-size: 32px;
       }
-      
+
       .category {
         margin-bottom: 40px;
       }
-      
+
       .category-title {
         font-size: 24px;
         text-transform: uppercase;
@@ -27,13 +27,13 @@
         border-bottom: 2px solid #5FA239;
         padding-bottom: 5px;
       }
-      
+
       .project-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 20px;
       }
-      
+
       .project-card {
         border-radius: 8px;
         overflow: hidden;
@@ -43,11 +43,11 @@
         transition: border-color 0.3s ease;
         cursor: pointer;
       }
-      
+
       .project-card:hover {
         border-color: #5FA239;
       }
-      
+
       .project-image {
         height: 200px;
         width: 100%;
@@ -55,13 +55,13 @@
         background-size: cover;
         background-position: center;
       }
-      
+
       .project-title {
         padding: 15px;
         font-weight: bold;
         background-color: white;
       }
-      
+
       .project-overlay {
         position: absolute;
         top: 0;
@@ -78,16 +78,16 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      
+
       .project-card:hover .project-overlay {
         opacity: 1;
       }
-      
+
       .project-description {
         font-size: 14px;
         line-height: 1.4;
       }
-      
+
       .view-project {
         margin-top: 15px;
         background-color: white;
@@ -101,40 +101,57 @@
       }
     </style>
   </head>
-<body>
-  <h2 class="category-title">Personal Projects</h2>
-  <p> Here's some of my personal projects. It mostly consists of character concepts and 3D modeling developments. </p>
-  <div class="category">
-         <div class="project-grid">
-        <div class="project-card" onclick="loadProject('projects/personal-project1.html')">
-          <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
+  <body>
+    <h2 class="category-title">Personal Projects</h2>
+    <p>
+      Here's some of my personal projects. It mostly consists of character
+      concepts and 3D modeling developments.
+    </p>
+    <div class="category">
+      <div class="project-grid">
+        <div
+          class="project-card"
+          onclick="loadProject('projects/personal-project1.html')"
+        >
+          <div
+            class="project-image"
+            style="background-image: url('/api/placeholder/300/200');"
+          ></div>
           <div class="project-title">3D Modeling: 2D to 3D Adaptation</div>
           <div class="project-overlay">
             <div class="project-description">
-              Developing a method to convert a heavily stylized 2D character to 3D, while still maintaining the original style. 
+              Developing a method to convert a heavily stylized 2D character to
+              3D, while still maintaining the original style.
             </div>
             <div class="view-project">View Project</div>
           </div>
         </div>
-        
-        <div class="project-card" onclick="loadProject('projects/personal-project2.html')">
-          <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
+
+        <div
+          class="project-card"
+          onclick="loadProject('projects/personal-project2.html')"
+        >
+          <div
+            class="project-image"
+            style="background-image: url('/api/placeholder/300/200');"
+          ></div>
           <div class="project-title">Miscellaneous Character Design Notes</div>
           <div class="project-overlay">
             <div class="project-description">
-              A repository of some character designs that I've done and the thought processes for how I got to them. 
+              A repository of some character designs that I've done and the
+              thought processes for how I got to them.
             </div>
             <div class="view-project">View Project</div>
           </div>
         </div>
       </div>
     </div>
-  
-  <script>
-    function loadProject(projectPage) {
-      // This function will tell the parent window to load the project page in the iframe
-      window.parent.frames["contentFrame"].location.href = projectPage;
-    }
-  </script>
-</body>
+
+    <script>
+      function loadProject(projectPage) {
+        // This function will tell the parent window to load the project page in the iframe
+        window.parent.frames["contentFrame"].location.href = projectPage;
+      }
+    </script>
+  </body>
 </html>
