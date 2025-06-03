@@ -110,12 +110,23 @@
         display: inline-block;
       }
 
+        a.project-card {
+        color: inherit;              /* Use the surrounding text color */
+        text-decoration: none;       /* Remove underline */
+        }
+
+        a.project-card:visited {
+        color: inherit;              /* Prevent purple color on visited links */
+        }
+
+        a.project-card:hover {
+        color: inherit;              /* Optional: keep color consistent on hover */
+        }      
+        
     </style>
   </head>
   <body>
     <h2 class="heading-title">Website Repositories</h2>
-
-    <h2 class="category-title">Introduction</h2>
     <p>
       This is less of a project, more of a consolidation of resources that I've
       found and wanted to keep track of for future reference. I thought it would
