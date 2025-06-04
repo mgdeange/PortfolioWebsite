@@ -113,32 +113,6 @@
         gap: 2rem;
         flex-wrap: wrap;
       }
-
-      /* Default for WebKit browsers (Chrome, Edge, Safari) */
-      .blocky-scrollbar {
-        scrollbar-width: auto; /* fallback */
-        scrollbar-color: initial;
-        overflow-y: scroll;
-      }
-
-      .blocky-scrollbar::-webkit-scrollbar {
-        width: 12px;
-        background-color: black;
-      }
-
-      .blocky-scrollbar::-webkit-scrollbar-thumb {
-        background-color: green;
-        border-radius: 0;
-        border: 2px solid black;
-      }
-
-      /* Firefox-specific override */
-      @supports (-moz-appearance: none) {
-        .blocky-scrollbar {
-          scrollbar-width: thin;
-          scrollbar-color: green black;
-        }
-      }
     </style>
   </head>
 
