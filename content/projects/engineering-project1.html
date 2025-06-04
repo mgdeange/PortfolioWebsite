@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>EGR 401/402 Project: Hazardous Material Transport</title>
-    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../styles.css" />
+    <script src="../../scripts.js"></script>
   </head>
   <body>
     <h1 class="heading-title">
@@ -23,8 +24,8 @@
     <p>Todo: Add a gallery for the pictures, including the schematics/model.</p>
 
     <!--Gallery Business, figure out what you wanna put here-->
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <div style="display: flex; flex-direction: column;">
+    <div style="display: flex; justify-content: center; align-items: center">
+      <div style="display: flex; flex-direction: column">
         <div class="gallery-wrapper">
           <button class="gallery-button" onclick="prevImage()">❮</button>
           <div class="gallery-container">
@@ -70,40 +71,6 @@
         },
       ];
       let index = 0;
-
-      function showImage() {
-        const img = document.getElementById("gallery-img");
-        const caption = document.getElementById("caption");
-        img.src = images[index].src;
-        caption.textContent = images[index].caption;
-      }
-
-      function prevImage() {
-        index = (index - 1 + images.length) % images.length;
-        showImage();
-      }
-
-      function nextImage() {
-        index = (index + 1) % images.length;
-        showImage();
-      }
-
-      function openModal() {
-        const modal = document.getElementById("modal");
-        const modalImg = document.getElementById("modal-img");
-        modalImg.src = images[index].src;
-        modal.style.display = "flex";
-      }
-
-      function closeModal(event) {
-        if (
-          event.target.id === "modal" ||
-          event.target.className === "modal-close"
-        ) {
-          document.getElementById("modal").style.display = "none";
-        }
-      }
-
       window.onload = showImage;
     </script>
   </body>
