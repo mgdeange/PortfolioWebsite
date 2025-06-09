@@ -1,27 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>EGR 314 Project: Mobile Plant Caretaker</title>
-    <link rel="stylesheet" href="../../styles.css">
-    </style>
-  </head>
-  <body>
-    <h2 class="heading-title">
-      EGR 314 Project: Mobile Plant Caretaker
-    </h2>
 
-    <h2 class="category-title">Abstract</h2>
-    <p>Insert summary about project.</p>
+<head>
+  <meta charset="UTF-8" />
+  <title>EGR 314 Project: Mobile Plant Caretaker</title>
+  <link rel="stylesheet" href="../../styles.css">
+  </style>
+</head>
 
-    <h2 class="category-title">Teammates</h2>
-    <p>Manuel Garcia | Link to LinkedIn</p>
-    <p>Isaac Linares | Link to LinkedIn</p>
-    <p>Danial Haddad | Link to LinkedIn</p>
+<body>
+  <h2 class="heading-title">
+    EGR 314 Project: Mobile Plant Caretaker
+  </h2>
 
-    <h2 class="category-title">
-      Main Content (figure out how to segment it nicely)
-    </h2>
-    <p>Todo: Add a gallery for the pictures, including the schematics/model.</p>
-  </body>
+  <h2 class="category-title">Abstract</h2>
+  <p>The team designed and built a mobile weather station that continously transmits data to a WiFi server for a user to
+    read from, and allow the user to control from that server.
+    I was in charge of the PCB design, code, and documentation for the project, which you can find <a
+      href="https://team207-s2024.github.io/team207-s2024/" target="_blank">here.</a>
+  </p>
+
+  <h2 class="category-title">Teammates</h2>
+
+  <p>Manuel Garcia | <a href="https://www.linkedin.com/in/manuel-garcia-3a1704229/" target="_blank">LinkedIn</a> |
+    Mechanical Design & Movement Subsystem
+  </p>
+  <p>Isaac Linares | <a href="https://www.linkedin.com/in/isaac-linares-492722359/" target="_blank">LinkedIn</a> |
+    Humidity Subsystem
+  </p>
+  <p>Danial Haddad | <a href="https://www.linkedin.com/in/danial-haddad-529544181/" target="_blank">LinkedIn</a> |
+    Temperature Subsystem
+  </p>
+
+  <h2 class="category-title">
+    The Problem
+  </h2>
+  <p>
+    The mission of the team is to create a sensor-based weather-reporting product that is unique, portable,
+    professional, reliable, and user-friendly. It is something that should be focused so that a person can easily use
+    and install themselves and is relatively simple to collect data from, along with contingency plans in case things go
+    awry.
+  </p>
+
+  <h2 class="category-title">
+    The Solution
+  </h2>
+  <p>When it comes to plant caretaking, some plants require more than just watering them every now and again
+    Some require a more robust maintenance schedule, which can interefere with people's working schedules.
+    The project seeks to offset that by creating a device that can autonomously care for a plant based on certain
+    factors, such as humidity of the soil or the temperature of the surrounding area, and signal to the user
+    how the plant is doing wherever they are.
+  </p>
+
+  <h2 class="category-title">
+    Design Features
+  </h2>
+  <p>The mobile weather station consists of a belt-based movement system that the plant would be placed on, and move to
+    and from a shaded area in accordance to certain variables, such as humidity and temperature.
+  <div class="button-container">
+    <button class="expand-button collapsed" data-id="3">
+      Mobile
+      <div class="text">The station is built for smaller plants, and thus is easy for the user to place wherever they
+        want.</div>
+    </button>
+    <button class="expand-button collapsed" data-id="1">
+      Temperature
+      <div class="text">The temperature sensor built into the station detects if the area is too hot or too cold for the
+        plant, and will move to the shade to protect it accordingly. </div>
+  </div>
+  </button>
+  <button class="expand-button collapsed" data-id="2">
+    Humidity
+    <div class="text">The humdity sensor would detect if the soil needs to be watered or not, and will move the plant
+      outside of the shade for the user to water.</div>
+  </button>
+  <button class="expand-button collapsed" data-id="3">
+    WiFi
+    <div class="text">The system continously transmits data to an MQTT server, where the user can see the current state
+      of the plant. The user can also manually send the plant either in or out of the shade by sending a signal from the
+      MQTT server. </div>
+  </button>
+  </div>
+  </p>
+  <h2 class="category-title">
+    Schematic, PCB, and Software Algorithm
+  </h2>
+  <p>The following is the work I did specifically for the project. </p>
+  <!--Gallery Business, figure out what you wanna put here-->
+  <div style="display: flex; justify-content: center; align-items: center">
+    <div style="display: flex; flex-direction: column">
+      <div class="gallery-wrapper">
+        <button class="gallery-button" onclick="prevImage()">❮</button>
+        <div class="gallery-container">
+          <div class="gallery-img-container">
+            <img id="gallery-img" src="img/engineering-project2/schematic.png" alt="Project Image" onclick="openModal()" />
+          </div>
+          <div id="caption" class="image-caption">Final Schematic. </div>
+        </div>
+        <button class="gallery-button" onclick="nextImage()">❯</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event)">&times;</span>
+      <img id="modal-img" src="" alt="Expanded Image" />
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      {
+        src: "img/engineering-project2/schematic.png",
+        caption: "Final Schematic. ",
+      },
+      {
+        src: "img/engineering-project2/toppcb.pdf",
+        caption: "Final PCB Top Layer Design.",
+      },
+      {
+        src: "img/engineering-project2/botpcb.pdf",
+        caption: "Final PCB Bottom Layer Design.",
+      },
+      {
+        src: "img/engineering-project2/softwarealgo.png",
+        caption: "Final Software Algorithm.",
+      },
+    ];
+    let index = 0;
+    window.onload = showImage;
+  </script>
+</body>
+
 </html>

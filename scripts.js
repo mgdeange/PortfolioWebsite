@@ -1,3 +1,22 @@
+const buttons = document.querySelectorAll('.expand-button');
+let openButton = null;
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    if (openButton && openButton !== button) {
+      openButton.classList.add('collapsed');
+    }
+
+    if (button.classList.contains('collapsed')) {
+      button.classList.remove('collapsed');
+      openButton = button;
+    } else {
+      button.classList.add('collapsed');
+      openButton = null;
+    }
+  });
+});
+
 function loadProject(projectPage) {
   const frame = window.parent.frames["contentFrame"];
   if (frame && projectPage) {
