@@ -26,6 +26,12 @@ a:link {
   text-decoration: none;
 }
 
+.linkedinlink {
+  color:  #5fa239;
+  background-color: transparent;
+  text-decoration: none;
+}
+
 a:visited {
   color: black;
   background-color: transparent;
