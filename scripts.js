@@ -26,48 +26,29 @@ function loadProject(projectPage) {
   }
 }
 
-function showContent() {
-  const container = document.getElementById("gallery-content");
+function showImage() {
+  const img = document.getElementById("gallery-img");
   const caption = document.getElementById("caption");
-  const currentItem = images[index];
-  
-  // Clear the container
-  container.innerHTML = '';
-  
-  if (currentItem.type === "img") {
-    const img = document.createElement("img");
-    img.src = currentItem.src;
-    img.alt = "Project Image";
-    img.onclick = openModal;
-    container.appendChild(img);
-  } else if (currentItem.type === "iframe") {
-    const iframe = document.createElement("iframe");
-    iframe.src = currentItem.src;
-    iframe.allowFullscreen = true;
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-    container.appendChild(iframe);
-  }
-  
-  caption.textContent = currentItem.caption;
+  img.src = images[index].src;
+  caption.textContent = images[index].caption;
 }
 
 function prevImage() {
   index = (index - 1 + images.length) % images.length;
-  showContent();
+  showImage();
 }
 
 function nextImage() {
   index = (index + 1) % images.length;
-  showContent();
+  showImage();
 }
 
 function openModal() {
-  const currentItem = images[index];
-  if (currentItem.type !== "img") return; // Only allow modal for images
+  if (images[index].type !== "img") return; // Only allow modal for images
 
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
-  modalImg.src = currentItem.src;
+  modalImg.src = images[index].src;
   modal.style.display = "flex";
 }
 
