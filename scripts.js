@@ -76,5 +76,3 @@ function closeModal(event) {
     document.getElementById("modal").style.display = "none";
   }
 }
-
-
