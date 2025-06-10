@@ -1,4 +1,4 @@
-  const buttons = document.querySelectorAll('.expand-button');
+const buttons = document.querySelectorAll('.expand-button');
 let openButton = null;
 
 buttons.forEach(button => {
