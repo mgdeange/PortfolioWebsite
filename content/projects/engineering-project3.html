@@ -46,11 +46,63 @@
   <div class="project-banner-wrapper">
     <img src="../../img/engineering-project3/problem.png" alt="LANL Hackathon Problem Statement">
   </div>
-
   <h2 class="category-title">
     The Solution
   </h2>
-  <p></p>
+  <p>
+    While Los Alamos did say they wanted an automated solution, the team wanted to make sure that the operator was not
+    completely removed from the equation. The focus was then on applying the operator in a way that they could be safer
+    while still having an important job. The chosen concept was to create a system where the material would be handled by a robot arm and placed  
+    onto a roundtable that could be manually controlled by the operator so they could visually inspect the material
+    without having to touch it themselves. The operator could then use an HMI to either approve or deny the material.
+
+    In the case of denial, the robot arm would send the material back for further production and future approval.
+
+    In the case of approval, the robot arm would take the material and place it gently into a barrel. 
+  </p>
+  <h2 class="category-title">
+    Media
+  </h2>
+
+ <!--Gallery Business, figure out what you wanna put here-->
+  <div style="display: flex; justify-content: center; align-items: center">
+    <div style="display: flex; flex-direction: column">
+      <div class="gallery-wrapper">
+        <button class="gallery-button" onclick="prevImage()">❮</button>
+        <div class="gallery-container">
+          <div class="gallery-img-container">
+            <img id="gallery-img" src="img/engineering-project2/schematic.png" alt="Project Image"
+              onclick="openModal()" />
+          </div>
+          <div id="caption" class="image-caption">Final Schematic. </div>
+        </div>
+        <button class="gallery-button" onclick="nextImage()">❯</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event)">&times;</span>
+      <img id="modal-img" src="" alt="Expanded Image" />
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      {
+        src: "../../img/engineering-project2/schematic.png",
+        caption: "Image of the Final Project. ",
+      },
+      {
+        type: "iframe",
+        src: "https://www.youtube.com/embed/QXD9l78L-RA?si=4NXW5VYd_nJFdP7v",
+        caption: "Animation of the Final Project (source: Dominick Trusko).",
+      }
+    ];
+    let index = 0;
+    window.onload = showImage;
+  </script>
 </body>
 
 </html>

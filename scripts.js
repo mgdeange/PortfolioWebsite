@@ -44,6 +44,8 @@ function nextImage() {
 }
 
 function openModal() {
+  if (images[index].type !== "img") return; // Only allow modal for images
+
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
   modalImg.src = images[index].src;
