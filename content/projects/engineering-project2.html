@@ -16,7 +16,7 @@
   <div class="project-banner-wrapper">
     <img src="../../img/engineering-project2/weatherstation.png" alt="Mobile Plant Caretaker Diagram">
   </div>
-  
+
   <h2 class="category-title">Abstract</h2>
   <p>The team designed and built a mobile weather station that continously transmits data to a WiFi server for a user to
     read from, and allow the user to control from that server.
@@ -90,49 +90,44 @@
     </button>
   </div>
 
-  <h2 class="category-title">
-    Schematic, PCB, and Software Algorithm
-  </h2>
-  <p>The following is the work I did specifically for the project. </p>
-  <!--Gallery Business, figure out what you wanna put here-->
+  <!-- Gallery Section with Iframe Support -->
+  <h2 class="category-title">Schematic, PCB, and Software Algorithm</h2>
+  <p>The following is the work I did specifically for the project.</p>
+
   <div style="display: flex; justify-content: center; align-items: center">
     <div style="display: flex; flex-direction: column">
       <div class="gallery-wrapper">
         <button class="gallery-button" onclick="prevImage()">❮</button>
         <div class="gallery-container">
-          <div class="gallery-img-container">
-            <img id="gallery-img" src="/PortfolioWebsite/img/engineering-project2/schematic.png" alt="Project Image"
-              onclick="openModal()" />
+          <div id="gallery-content" class="gallery-img-container">
+            <!-- Content (img or iframe) will be dynamically injected here -->
           </div>
-          <div id="caption" class="image-caption">Final Schematic. </div>
+          <div id="caption" class="image-caption">Final Schematic.</div>
         </div>
         <button class="gallery-button" onclick="nextImage()">❯</button>
       </div>
     </div>
   </div>
 
-  <div id="modal" class="modal" onclick="closeModal(event)">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal(event)">&times;</span>
-      <img id="modal-img" src="" alt="Expanded Image" />
-    </div>
-  </div>
-
   <script>
     const images = [
       {
+        type: "img",
         src: "/PortfolioWebsite/img/engineering-project2/schematic.png",
         caption: "Final Schematic.",
       },
       {
+        type: "img",
         src: "/PortfolioWebsite/img/engineering-project2/toppcb.png",
         caption: "Final PCB Bottom Layer Design.",
       },
       {
+        type: "img",
         src: "/PortfolioWebsite/img/engineering-project2/botpcb.png",
         caption: "Final PCB Top Layer Design.",
       },
       {
+        type: "img",
         src: "/PortfolioWebsite/img/engineering-project2/softwarealgo.png",
         caption: "Final Software Algorithm.",
       }
