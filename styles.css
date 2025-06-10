@@ -162,6 +162,7 @@ a:visited {
   margin-top: 10px;
   font-size: 14px;
   color: #e0ffe0;
+  text-transform: none;
 }
 
 .expand-button.collapsed .text {
