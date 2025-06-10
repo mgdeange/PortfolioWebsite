@@ -1,76 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Projects</title>
-    <link rel="stylesheet" href="../styles.css">
-    <script src="../scripts.js"></script>
-  </head>
 
-  <body>
-    <h2 class="category-title">Introduction</h2>
-    <p>Hi! I'm Michaela, but I go by Mickey for short.</p>
-    <p>I'm a recent Engineering graduate with a focus in Electrical Systems.</p>
-    <p>
-      I'm always looking to improve myself and my skills further to create even
-      better solutions!
-    </p>
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../scripts.js"></script>
+</head>
 
-    <section class="skills">
-      <h2 class="category-title">Core Skills</h2>
-      <ul>
-        <li>CAD & 3D Modeling</li>
-        <li>PCB Design & Manufacturing</li>
-        <li>Pneumatic & Electrical Systems</li>
-        <li>C/C++/Python</li>
-        <li>PLC Programming</li>
-      </ul>
-    </section>
+<body>
+  <h2 class="category-title">Introduction</h2>
+  <p>Hi! I'm Michaela, but I go by Mickey for short.</p>
+  <p>I'm a recent Engineering graduate with a focus in Electrical Systems.</p>
+  <p>
+    I'm always looking to improve myself and my skills further to create even
+    better solutions!
+  </p>
 
-    <div class="category">
-      <h2 class="category-title">Featured Projects</h2>
-      <div class="project-grid">
-        <div
-          class="project-card"
-          onclick="loadProject('projects/engineering-project1.html')"
-        >
-          <div
-            class="project-image"
-            style="background-image: url('https://www.uship.com/learn/ca/wp-content/uploads/sites/3/thumbnail-placeholder-300x200-300x200.png');"
-          ></div>
-          <div class="project-title">
-            EGR 401/402 Project: Hazardous Material Transport
-          </div>
-          <div class="project-overlay">
-            <div class="project-description">
-              Designed and built an industrial-grade pneumatic actuation system
-              to transfer hazardous materials within an enclosed environment.
-            </div>
-            <div class="view-project">View Project</div>
-          </div>
+  <section class="skills">
+    <h2 class="category-title">Core Skills</h2>
+    <div class="button-container">
+      <button class="expand-button collapsed" data-id="1">
+        CAD & 3D Modeling
+        <div class="text">xxxxx</div>
+      </button>
+
+      <button class="expand-button collapsed" data-id="2">
+        PCB Design & Manufacturing
+        <div class="text">xxx</div>
+      </button>
+
+      <button class="expand-button collapsed" data-id="3">
+        Pneumatic & Electrical Systems
+        <div class="text">xxx</div>
+      </button>
+
+      <button class="expand-button collapsed" data-id="4">
+        C/C++/Python
+        <div class="text">xxxx</div>
+      </button>
+
+      <button class="expand-button collapsed" data-id="5">
+        PLC Programming
+        <div class="text">xxx</div>
+      </button>
+    </div>
+  </section>
+
+  <div class="category">
+    <h2 class="category-title">Featured Projects</h2>
+    <div class="project-grid">
+      <div class="project-card" onclick="loadProject('projects/engineering-project1.html')">
+        <div class="project-image"
+          style="background-image: url('https://www.uship.com/learn/ca/wp-content/uploads/sites/3/thumbnail-placeholder-300x200-300x200.png');">
         </div>
+        <div class="project-title">
+          EGR 401/402 Project: Hazardous Material Transport
+        </div>
+        <div class="project-overlay">
+          <div class="project-description">
+            Designed and built an industrial-grade pneumatic actuation system
+            to transfer hazardous materials within an enclosed environment.
+          </div>
+          <div class="view-project">View Project</div>
+        </div>
+      </div>
 
-        <div
-          class="project-card"
-          onclick="loadProject('projects/engineering-project2.html')"
-        >
-          <div
-            class="project-image"
-            style="background-image: url('https://www.uship.com/learn/ca/wp-content/uploads/sites/3/thumbnail-placeholder-300x200-300x200.png');"
-          ></div>
-          <div class="project-title">
-            EGR 314 Project: Mobile Plant Caretaker
+      <div class="project-card" onclick="loadProject('projects/engineering-project2.html')">
+        <div class="project-image"
+          style="background-image: url('https://www.uship.com/learn/ca/wp-content/uploads/sites/3/thumbnail-placeholder-300x200-300x200.png');">
+        </div>
+        <div class="project-title">
+          EGR 314 Project: Mobile Plant Caretaker
+        </div>
+        <div class="project-overlay">
+          <div class="project-description">
+            Designed and built a battery-powered portable device that
+            autonomously moves a plant in and out of shaded housing according
+            to temperature and humidity data.
           </div>
-          <div class="project-overlay">
-            <div class="project-description">
-              Designed and built a battery-powered portable device that
-              autonomously moves a plant in and out of shaded housing according
-              to temperature and humidity data.
-            </div>
-            <div class="view-project">View Project</div>
-          </div>
+          <div class="view-project">View Project</div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+  <script>
+    const buttons = document.querySelectorAll('.expand-button');
+    let openButton = null;
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (openButton && openButton !== button) {
+          openButton.classList.add('collapsed');
+        }
+
+        if (button.classList.contains('collapsed')) {
+          button.classList.remove('collapsed');
+          openButton = button;
+        } else {
+          button.classList.add('collapsed');
+          openButton = null;
+        }
+      });
+    });
+  </script>
+</body>
+
 </html>
