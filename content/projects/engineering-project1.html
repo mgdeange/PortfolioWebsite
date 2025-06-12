@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>EGR 401/402 Project: Hazardous Material Transport</title>
     <link rel="stylesheet" href="../../styles.css" />
-    <script src="../../scripts.js"></script>
   </head>
   <body>
     <h1 class="heading-title">
@@ -23,20 +22,20 @@
     </h2>
     <p>Todo: Add a gallery for the pictures, including the schematics/model.</p>
 
-  <div style="display: flex; justify-content: center; align-items: center">
-    <div style="display: flex; flex-direction: column">
-      <div class="gallery-wrapper">
-        <button class="gallery-button" onclick="prevImage()">❮</button>
-        <div class="gallery-container">
-          <div id="gallery-content" class="gallery-img-container">
-            <!-- Content (img or iframe) will be dynamically injected here -->
+    <div style="display: flex; justify-content: center; align-items: center">
+      <div style="display: flex; flex-direction: column">
+        <div class="gallery-wrapper">
+          <button class="gallery-button" onclick="prevImage()">❮</button>
+          <div class="gallery-container">
+            <div id="gallery-content" class="gallery-img-container">
+              <!-- Content (img or iframe) will be dynamically injected here -->
+            </div>
+            <div id="caption" class="image-caption">Final Schematic.</div>
           </div>
-          <div id="caption" class="image-caption">Final Schematic.</div>
+          <button class="gallery-button" onclick="nextImage()">❯</button>
         </div>
-        <button class="gallery-button" onclick="nextImage()">❯</button>
       </div>
     </div>
-  </div>
 
     <script>
       const images = [
@@ -64,5 +63,6 @@
       let index = 0;
       window.onload = showContent;
     </script>
+    <script src="../../scripts.js"></script>
   </body>
 </html>
