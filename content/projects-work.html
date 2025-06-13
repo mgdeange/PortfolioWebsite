@@ -53,6 +53,16 @@
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (
+          typeof images !== "undefined" &&
+          typeof showContent === "function"
+        ) {
+          showContent(); // Initialize gallery
+        }
+      });
+    </script>
     <script src="../scripts.js"></script>
   </body>
 </html>
