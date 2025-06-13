@@ -69,12 +69,11 @@ function nextImage() {
 }
 
 function openModal() {
-  const currentItem = images[index];
-  if (currentItem.type !== "img") return; // Only allow modal for images
+  if (images[index].type !== "img") return; // Only open modal for image type
 
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
-  modalImg.src = currentItem.src;
+  modalImg.src = images[index].src;
   modal.style.display = "flex";
 }
 
