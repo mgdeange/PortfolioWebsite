@@ -165,6 +165,9 @@ a:visited {
   text-transform: none;
 }
 
+.expand-button:hover {
+  background-color: #3b6b1f;
+}
 .expand-button.collapsed .text {
   display: none;
 }
