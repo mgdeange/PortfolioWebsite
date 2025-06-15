@@ -220,6 +220,13 @@ a:visited {
   align-items: center;
   justify-content: center;
 }
+.gallery-button:first-child{
+  margin-left: 20px;
+}
+
+.gallery-button:last-child{
+  margin-right: 20px;
+}
 
 .gallery-button:hover {
   background-color: #5fa239;
@@ -233,7 +240,6 @@ a:visited {
   overflow: hidden;
   max-width: 600px;
   width: 100%;
-  margin: 0 20px;
   box-sizing: border-box;
 }
 
