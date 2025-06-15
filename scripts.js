@@ -1,17 +1,17 @@
-const buttons = document.querySelectorAll('.expand-button');
+const buttons = document.querySelectorAll(".expand-button");
 let openButton = null;
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
     if (openButton && openButton !== button) {
-      openButton.classList.add('collapsed');
+      openButton.classList.add("collapsed");
     }
 
-    if (button.classList.contains('collapsed')) {
-      button.classList.remove('collapsed');
+    if (button.classList.contains("collapsed")) {
+      button.classList.remove("collapsed");
       openButton = button;
     } else {
-      button.classList.add('collapsed');
+      button.classList.add("collapsed");
       openButton = null;
     }
   });
@@ -32,7 +32,7 @@ function showContent() {
   const currentItem = images[index];
 
   // Clear previous content
-  container.innerHTML = '';
+  container.innerHTML = "";
 
   if (currentItem.type === "img") {
     const img = document.createElement("img");
