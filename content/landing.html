@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <title>Projects</title>
     <link rel="stylesheet" href="../styles.css" />
+    <style>
+      body {
+        overflow: hidden; /* Prevent scrolling */
+      }
+    </style>
   </head>
 
   <body>
-    overflow: hidden;
-    
     <h2 class="category-title">Introduction</h2>
     <p>Hi! I'm Michaela, but I go by Mickey for short.</p>
     <p>I'm a recent Engineering graduate with a focus in Electrical Systems.</p>
@@ -20,24 +23,31 @@
     <section class="skills">
       <h2 class="category-title">Core Skills</h2>
       <div class="button-container">
+        <span class="icon">
+          <img
+            src="/../assets/icons/3D.svg"
+            alt="3D Icon"
+          />
+        </span>
         <button class="expand-button collapsed" data-id="1">
           CAD & 3D Modeling
-          <span class="text">Test 123</span>
+          <span class="text">
+            Experienced in Blender for game asset creation and turnaround animations. Proficient in Solidworks for prototyping and engineering design.
+          </span>
         </button>
 
         <button class="expand-button collapsed" data-id="3">
-          Pneumatic & Electrical Systems
-          <span class="text">xxx</span>
+          Electrical & Pneumatic Systems
+          <span class="text">
+            Strong background in circuit design and analysis, PCB design and manufacturing. Experienced in pneumatic system design and integration using SMC and Automation Direct components.
+          </span>
         </button>
 
         <button class="expand-button collapsed" data-id="4">
-          C/C++/Python
-          <span class="text">xxxx</span>
-        </button>
-
-        <button class="expand-button collapsed" data-id="5">
-          PLC Programming
-          <span class="text">xxx</span>
+          C/C++/Python/Ladder Logic
+          <span class="text">
+            Competent in embedded systems programming and script development. Knowledgeable in PLC programming using Rockwell Automation PLCs. 
+          </span>
         </button>
       </div>
     </section>

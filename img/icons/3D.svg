@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+	<title>modelling</title>
+	<style>
+		.s0 { opacity: 1;fill: #ffffff } 
+		.s1 { opacity: 1;fill: #000000 } 
+		.s2 { opacity: .37;fill: #000000 } 
+	</style>
+	<g id="Background">
+		<path id="Path 1" class="s0" d="m86 396l8-5 2 13 9 6-5 3zm332 2v-7l6 4z"/>
+		<path id="Path 2" class="s0" d="m252 21l1-1h6l1 1 40 40-3 11-11 3-19-16v81l-8-4-14 4v-81l-19 16-11-3-3-11zm166 377l6-3 57 33 2-1-5-24 8-7 10 2 5 8 9 38 1 1v2l1 2v6l-1 1v1l-1 1-5 5-44 12-12-2-3-7v-5l4-7 21-7-64-37 9-6zm-417 49l10-41 5-8 10-2 7 5 1 11-5 15 2 1 55-32 14 17-59 34 24 10 1 12-7 6-52-12-6-7-1-1v-6z"/>
+		<path id="Path 3" fill-rule="evenodd" class="s1" d="m245 140l14-4 8 4 149 84 2 167v7l-2 6-9 6-147 81-1 1h-6l-1-1-147-81-9-6-2-13 2-167zm-116 91l125 70 129-70-129-71zm-13 160l129 71v-142l-129-70zm151-71v142l129-71v-141h-3z"/>
+		<path id="Path 5" class="s2" d="m252 491h1v1h-1zm7 0h1v1h-1z"/>
+	</g>
+</svg>

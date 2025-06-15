@@ -33,6 +33,12 @@ a:link {
   font-weight: bold
 }
 
+.linkedinlink:hover {
+  color: #5fa239;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold
+}
 a:visited {
   color: black;
   background-color: transparent;
@@ -139,7 +145,7 @@ a:visited {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 300px;
+  width: 350px;
 }
 
 .expand-button {
@@ -155,6 +161,7 @@ a:visited {
   overflow: hidden;
   transition: max-height 0.3s ease, padding-bottom 0.3s ease;
   max-height: 50px;
+  width: 500px;
 }
 
 .expand-button .text {
@@ -166,7 +173,7 @@ a:visited {
 }
 
 .expand-button:hover {
-  background-color: #3b6b1f;
+  background-color: #41702A;
 }
 .expand-button.collapsed .text {
   display: none;
@@ -175,6 +182,20 @@ a:visited {
 .expand-button:not(.collapsed) {
   max-height: 300px;
   padding-bottom: 20px;
+}
+
+/* Button Icons */
+.expand-button .icon {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+.expand-button .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Gallery Setup */
@@ -210,7 +231,10 @@ a:visited {
   align-items: center;
   border-radius: 0;
   overflow: hidden;
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 20px;
+  box-sizing: border-box;
 }
 
 .gallery-img-container {
@@ -285,7 +309,7 @@ a:visited {
 
 .project-banner-wrapper img {
   width: 100%;
-  height: auto;
+  height: auto - 5px;
   display: block;
 }
 
@@ -298,7 +322,7 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: #5fa239;
   border-radius: 0;
-  border: 2px solid black;
+  border: 4px solid black;
 }
 
 body::-webkit-scrollbar-track {
@@ -307,6 +331,6 @@ body::-webkit-scrollbar-track {
 
 /* Firefox Scrollbar */
 html {
-  scrollbar-width: thin;
+  scrollbar-width: thick;
   scrollbar-color: #5fa239 black;
 }
