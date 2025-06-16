@@ -3,10 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="EGR 314 Project: Mobile Plant Caretaker" />
+    <meta
+      name="description"
+      content="EGR 314 Project: Mobile Plant Caretaker"
+    />
     <title>EGR 314 Project: Mobile Plant Caretaker</title>
     <link rel="stylesheet" href="../../styles.css" />
     <style>
+      @media only screen and (max-width: 900px),
+        (max-width: 768px),
+        (max-width: 480px) {
+        /* Reset body padding for mobile */
+        body {
+          padding: 50px 100px 100px 100px;
+        }
+
+        /* Stack the main project overview sections */
+        .project-overview {
+          flex-direction: column;
+          margin-left: 0;
+          gap: 20px;
+        }
+
+        /* Make content sections full width */
+        .project-content-section {
+          max-width: 100%;
+          flex: none;
+        }
+
+        /* Stack gallery section properly */
+        .project-gallery-section {
+          margin-top: 30px;
+          width: 100%;
+        }
+
+        /* Make gallery responsive */
+        .gallery-wrapper {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .gallery-container {
+          max-width: 100%;
+          order: 1;
+        }
+
+        .gallery-button {
+          order: 2;
+          width: 100%;
+          margin: 0 !important;
+        }
+
+        .gallery-button:first-child {
+          order: 2;
+        }
+
+        .gallery-button:last-child {
+          order: 3;
+        }
+
+        /* Make banner image responsive */
+        .project-banner-wrapper {
+          max-width: 100%;
+          margin: 20px 0;
+        }
+
+        /* Adjust content boxes */
+        .content-box {
+          padding: 15px;
+          margin-bottom: 15px;
+        }
+
+        .content-box-body p {
+          margin-left: 10px;
+        }
+
+        /* Make titles responsive */
+        .heading-title {
+          font-size: 24px;
+        }
+
+        .category-title {
+          font-size: 20px;
+        }
+
+        /* Fix title line width */
+        .title-line {
+          width: calc(100vw - 30px);
+          margin-left: -15px;
+        }
+
+        /* Make table responsive */
+        table {
+          font-size: 14px;
+        }
+
+        td {
+          padding: 8px 5px;
+        }
+
+        /* Ensure buttons stack properly */
+        .button-container-even {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
 
@@ -166,7 +266,10 @@
           <button class="expand-button collapsed" data-id="2">
             <div class="button-header">
               <span class="icon">
-                <img src="../../img/icons/thermometer.svg" alt="Temperature Icon" />
+                <img
+                  src="../../img/icons/thermometer.svg"
+                  alt="Temperature Icon"
+                />
               </span>
               <span class="title-text">Temperature</span>
             </div>
