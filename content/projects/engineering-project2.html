@@ -4,135 +4,264 @@
     <meta charset="UTF-8" />
     <title>EGR 314 Project: Mobile Plant Caretaker</title>
     <link rel="stylesheet" href="../../styles.css" />
+    <style>
+      .project-overview {
+        display: flex;
+        gap: 40px;
+        margin: 30px 0;
+        margin-left: 40px;
+        align-items: flex-start;
+      }
+
+      .project-content-section {
+        flex: 1;
+        max-width: 45%;
+      }
+
+      .content-box {
+        background-color: #ffffff;
+        margin-bottom: 0px;
+        padding: 20px;
+      }
+
+      .content-box-body {
+        padding: 0;
+      }
+
+      .content-box-body p {
+        margin-left: 20px;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .content-box-body p:last-child {
+        margin-bottom: 0;
+      }
+
+      .project-gallery-section {
+        margin-top: 100px;
+        gap: 2rem;
+      }
+
+      .gallery-container {
+        max-width: 700px; /* or your desired width */
+      }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td {
+      border-left: 2px solid #5fa239;   /* Center vertical lines */
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Remove all top/bottom borders unless specified below */
+    td {
+      border-top: none;
+      border-bottom: none;
+    }
+
+    /* First row: white top border */
+    tr:first-child td {
+      border-top: 2px solid white;
+    }
+
+    /* Last row: white bottom border */
+    tr:last-child td {
+      border-bottom: 2px solid white;
+    }
+
+    /* White left border on first column */
+    td:first-child {
+      border-left: 2px solid white;
+    }
+
+    /* White right border on last column */
+    td:last-child {
+      border-right: 2px solid white;
+      text-align: left;
+    }
+
+    </style>
   </head>
 
   <body>
     <h2 class="heading-title">EGR 314 Project: Mobile Plant Caretaker</h2>
+    <div class="title-line"></div>
 
-    <div class="project-banner-wrapper">
-      <img
-        src="../../img/engineering-project2/weatherstation.png"
-        class="modal-trigger"
-        alt="Mobile Plant Caretaker Diagram"
-        loading="eager";
-      />
+    <div class="project-overview">
+      <div class="project-banner-wrapper">
+        <img
+          src="../../img/engineering-project2/weatherstation.png"
+          class="modal-trigger"
+          alt="Mobile Plant Caretaker Diagram"
+          loading="eager"
+          ;
+        />
+      </div>
+
+      <div class="project-content-section">
+        <div class="content-box">
+          <h2 class="category-title">Abstract</h2>
+          <div class="title-line"></div>
+          <div class="content-box-body">
+            <p>
+              The team's goal was to design and build a mobile weather station
+              that could transmit and receive data to and from an MQTT server,
+              using microcontroller-to-microcontroller communication and serial
+              communication. The team took that concept and applied it to a
+              plant caretaker system, which would autonomously move a plant in
+              and out of shaded housing according to temperature and humidity
+              data.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-box">
+          <h2 class="category-title">Teammates</h2>
+          <div class="title-line"></div>
+          <div class="content-box-body">
+            <table>
+              <tr>
+                <td>Manuel Garcia</td>
+                <td>              <a
+                href="https://www.linkedin.com/in/manuel-garcia-3a1704229/"
+                class="linkedinlink"
+                target="_blank"
+                >LinkedIn</a
+              ></td>
+                <td>Mechanical Design & Movement Subsystem</td>
+              </tr>
+              <tr>
+                <td>Isaac Linares</td>
+                <td>              <a
+                href="https://www.linkedin.com/in/isaac-linares-492722359/"
+                class="linkedinlink"
+                target="_blank"
+                >LinkedIn</a
+              ></td>
+                <td>Temperature Subsystem</td>
+              </tr>
+              <tr>
+                <td>Danial Haddad</td>
+                <td>              <a
+                href="https://www.linkedin.com/in/danial-haddad-529544181/"
+                class="linkedinlink"
+                target="_blank"
+                >LinkedIn</a
+              ></td>
+                <td>Temperature Subsystem</td>
+              </tr>
+            </table>
+            <p>
+              I was in charge of the PCB design, code, and documentation for the
+              project, which you can find
+              <a
+                href="https://team207-s2024.github.io/team207-s2024/"
+                class="linkedinlink"
+                target="_blank"
+                >here.</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <h2 class="category-title">Abstract</h2>
-    <p>
-      The team designed and built a mobile weather station that continously
-      transmits data to a WiFi server for a user to read from, and allow the
-      user to control from that server. I was in charge of the PCB design, code,
-      and documentation for the project, which you can find
-      <a href="https://team207-s2024.github.io/team207-s2024/" target="_blank"
-        >here.</a
-      >
-    </p>
+    <div class="project-overview">
+      <div class="project-content-section">
+        <div class="content-box">
+          <h2 class="category-title" style="border-bottom: 4px solid #5fa239">
+            The Problem
+          </h2>
+          <div class="content-box-body">
+            <p>
+              The mission of the team is to create a sensor-based
+              weather-reporting product that is unique, portable, professional,
+              reliable, and user-friendly. It is something that should be
+              focused so that a person can easily use and install themselves and
+              is relatively simple to collect data from, along with contingency
+              plans in case things go awry.
+            </p>
+          </div>
+        </div>
 
-    <h2 class="category-title">Teammates</h2>
+        <div class="content-box">
+          <h2 class="category-title" style="border-bottom: 4px solid #5fa239">
+            The Solution
+          </h2>
+          <div class="content-box-body">
+            <p>
+              When it comes to plant caretaking, some plants require more than
+              just watering them every now and again Some require a more robust
+              maintenance schedule, which can interfere with people's working
+              schedules. The project seeks to offset that by creating a device
+              that can autonomously care for a plant based on certain factors,
+              such as humidity of the soil or the temperature of the surrounding
+              area, and signal to the user how the plant is doing wherever they
+              are.
+            </p>
+          </div>
+        </div>
 
-    <p>
-      Manuel Garcia |
-      <a
-        href="https://www.linkedin.com/in/manuel-garcia-3a1704229/"
-        class="linkedinlink"
-        target="_blank"
-        >LinkedIn</a
-      >
-      | Mechanical Design & Movement Subsystem
-    </p>
-    <p>
-      Isaac Linares |
-      <a
-        href="https://www.linkedin.com/in/isaac-linares-492722359/"
-        class="linkedinlink"
-        target="_blank"
-        >LinkedIn</a
-      >
-      | Humidity Subsystem
-    </p>
-    <p>
-      Danial Haddad |
-      <a
-        href="https://www.linkedin.com/in/danial-haddad-529544181/"
-        class="linkedinlink"
-        target="_blank"
-        >LinkedIn</a
-      >
-      | Temperature Subsystem
-    </p>
+        <div class="content-box">
+          <h2 class="category-title" style="border-bottom: 4px solid #5fa239">
+            Design Features
+          </h2>
+          <div class="content-box-body">
+            <p>
+              The mobile weather station consists of a belt-based movement
+              system that the plant would be placed on, and move to and from a
+              shaded area in accordance to certain variables, such as humidity
+              and temperature.
+            </p>
+          </div>
+        </div>
 
-    <h2 class="category-title">The Problem</h2>
-    <p>
-      The mission of the team is to create a sensor-based weather-reporting
-      product that is unique, portable, professional, reliable, and
-      user-friendly. It is something that should be focused so that a person can
-      easily use and install themselves and is relatively simple to collect data
-      from, along with contingency plans in case things go awry.
-    </p>
+        <div class="button-container-even">
+          <button class="expand-button collapsed" data-id="1">
+            Mobile
+            <span class="text">
+              The station is built for smaller plants, and thus is easy for the
+              user to place wherever they want.
+            </span>
+          </button>
 
-    <h2 class="category-title">The Solution</h2>
-    <p>
-      When it comes to plant caretaking, some plants require more than just
-      watering them every now and again Some require a more robust maintenance
-      schedule, which can interefere with people's working schedules. The
-      project seeks to offset that by creating a device that can autonomously
-      care for a plant based on certain factors, such as humidity of the soil or
-      the temperature of the surrounding area, and signal to the user how the
-      plant is doing wherever they are.
-    </p>
+          <button class="expand-button collapsed" data-id="2">
+            Temperature
+            <span class="text">
+              The temperature sensor built into the station detects if the area
+              is too hot or too cold for the plant, and will move to the shade
+              to protect it accordingly.
+            </span>
+          </button>
 
-    <h2 class="category-title">Design Features</h2>
-    <p>
-      The mobile weather station consists of a belt-based movement system that
-      the plant would be placed on, and move to and from a shaded area in
-      accordance to certain variables, such as humidity and temperature.
-    </p>
+          <button class="expand-button collapsed" data-id="3">
+            Humidity
+            <span class="text">
+              The humidity sensor would detect if the soil needs to be watered
+              or not, and will move the plant outside of the shade for the user
+              to water.
+            </span>
+          </button>
 
-    <div class="button-container-even">
-      <button class="expand-button collapsed" data-id="1">
-        Mobile
-        <span class="text">
-          The station is built for smaller plants, and thus is easy for the user
-          to place wherever they want.
-        </span>
-      </button>
+          <button class="expand-button collapsed" data-id="4">
+            WiFi
+            <span class="text">
+              The system continuously transmits data to an MQTT server, where
+              the user can see the current state of the plant. The user can also
+              manually send the plant either in or out of the shade by sending a
+              signal from the MQTT server.
+            </span>
+          </button>
+        </div>
+      </div>
 
-      <button class="expand-button collapsed" data-id="2">
-        Temperature
-        <span class="text">
-          The temperature sensor built into the station detects if the area is
-          too hot or too cold for the plant, and will move to the shade to
-          protect it accordingly.
-        </span>
-      </button>
-
-      <button class="expand-button collapsed" data-id="3">
-        Humidity
-        <span class="text">
-          The humidity sensor would detect if the soil needs to be watered or
-          not, and will move the plant outside of the shade for the user to
-          water.
-        </span>
-      </button>
-
-      <button class="expand-button collapsed" data-id="4">
-        WiFi
-        <span class="text">
-          The system continuously transmits data to an MQTT server, where the
-          user can see the current state of the plant. The user can also
-          manually send the plant either in or out of the shade by sending a
-          signal from the MQTT server.
-        </span>
-      </button>
-    </div>
-
-    <!-- Gallery Section with Iframe Support -->
-    <h2 class="category-title">Schematic, PCB, and Software Algorithm</h2>
-    <p>The following is the work I did specifically for the project.</p>
-
-    <div style="display: flex; justify-content: center; align-items: center">
-      <div style="display: flex; flex-direction: column">
+      <!-- Gallery section using the same structure -->
+      <div class="project-gallery-section">
         <div class="gallery-wrapper">
           <button class="gallery-button" onclick="prevImage()">❮</button>
           <div class="gallery-container">
@@ -152,6 +281,42 @@
         <img id="modal-img" src="" alt="Expanded Image" />
       </div>
     </div>
+
+    <h2 class="category-title">Lessons Learned</h2>
+    <div class="title-line"></div>
+
+    <p>
+      This project was eye-opening in a lot of ways. It gave me the opportunity
+      to learn how to work extensively in a group where communication was
+      critical in ways I hadn't experienced in other project courses before,
+      given that everyone's subsystems had to not only function, but function
+      with other systems at the same time.
+    </p>
+    <p>
+      Learning how to integrate microcontroller-to-microcontroller communication
+      using two different languages was also novel to me, but it made a lot of
+      sense the more I understood the process. Learning how to transmit and
+      receive serial data using an MQTT server, and being able to visually see
+      my inputs creating a reaction in the system, was a very rewarding process.
+    </p>
+    <p>
+      Developing the board was definitely a process, as WiFi communication can
+      be sensitive even on the best of days, so learning the importance of
+      keeping 'messier' systems like the power supply as far away as possible
+      from anything that needed to transmit or receive data was critical.
+    </p>
+    <p>
+      Finally, it opened my eyes to how fun it is to document the engineering
+      process and develop it for public showing on a website. It made me really
+      appreciate web design and how it wasn't as imposing as I thought it was.
+      While I look back on the website now and can see parts that I could do
+      better, I'm still happy with how it turned out.
+    </p>
+    <p>
+      Overall, this project kickstarted a lot of different interests in me and
+      for that I'll always look back on it fondly, even if it was an incredibly
+      unforgiving project.
+    </p>
 
     <script>
       const images = [
@@ -186,6 +351,25 @@
           typeof showContent === "function"
         ) {
           showContent(); // Initialize gallery
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const bannerImage = document.querySelector(
+          ".project-banner-wrapper img.modal-trigger"
+        );
+
+        if (bannerImage) {
+          // Add cursor pointer styling
+          bannerImage.style.cursor = "pointer";
+
+          // Add click event listener
+          bannerImage.addEventListener("click", function () {
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modal-img");
+            modalImg.src = this.src;
+            modal.style.display = "flex";
+          });
         }
       });
     </script>

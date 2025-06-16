@@ -1,37 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>EGR 401/402 Project: Hazardous Material Transport</title>
-    
+    <meta charset="UTF-8" />
+    <title>EGR 314 Project: Mobile Plant Caretaker</title>
+    <link rel="stylesheet" href="styles.css" />
     <style>
-      body {
-        font-family: sans-serif;
-        padding: 50px 100px 100px 100px;
-        margin: 0 auto;
+      .project-overview {
+        display: flex;
+        gap: 40px;
+        margin: 30px 0;
+        margin-left: 40px;
+        align-items: flex-start;
       }
-      
-      h1 {
-        margin-bottom: 30px;
-        font-size: 32px;
+
+      .project-content-section {
+        flex: 1;
+        max-width: 55%;
       }
-      
-      .category {
-        margin-bottom: 40px;
-      }
-      
-      .category-title {
-        font-size: 24px;
-        text-transform: uppercase;
+
+      .content-box {
+        background-color: #ffffff;
         margin-bottom: 20px;
-        color: #5FA239;
-        border-bottom: 2px solid #5FA239;
-        padding-bottom: 5px;
+        padding: 20px;
+      }
+
+      .content-box-body {
+        padding: 0;
+      }
+
+      .content-box-body p {
+        margin: 0 0 15px 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .content-box-body p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* New styles for the gallery section */
+      .project-gallery-section {
+        flex: 1;
+        max-width: 45%;
+        position: sticky;
+        top: 20px;
+      }
+
+      .gallery-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+
+      .gallery-container {
+        flex: 1;
+        text-align: center;
+      }
+
+      .gallery-img-container {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      .gallery-img-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+      }
+
+      .gallery-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 18px;
+        transition: background-color 0.3s;
+      }
+
+      .gallery-button:hover {
+        background-color: #45a049;
+      }
+
+      .image-caption {
+        font-style: italic;
+        color: #666;
+        margin-top: 10px;
+      }
+
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .modal-content img {
+        width: 100%;
+        height: auto;
+        max-height: 90vh;
+        object-fit: contain;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .modal-close:hover {
+        opacity: 0.7;
       }
     </style>
   </head>
-<body>
-    <h1>Test Page</h1>
 
-    <p>Test Page to find out why my page linkings aren't working. </p>
-</body>
+  <body>
+    <h2 class="heading-title">EGR 314 Project: Mobile Plant Caretaker</h2>
+    <div class="title-line"></div>
+
+    <!-- First project-overview section (Abstract & Teammates) -->
+    <div class="project-overview">
+      <div class="project-banner-wrapper">
+        <img
+          src="../../img/engineering-project2/weatherstation.png"
+          class="modal-trigger"
+          alt="Mobile Plant Caretaker Diagram"
+          loading="eager"
+        />
+      </div>
+
+      <div class="project-content-section">
+        <div class="content-box">
+          <h2 class="category-title">Abstract</h2>
+          <div class="title-line"></div>
+          <div class="content-box-body">
+            <p>
+              The team's goal was to design and build a mobile weather station
+              that could transmit and receive data to and from an MQTT server,
+              using microcontroller-to-microcontroller communication and serial
+              communication. The team took that concept and applied it to a
+              plant caretaker system, which would autonomously move a plant in
+              and out of shaded housing according to temperature and humidity
+              data.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-box">
+          <h2 class="category-title">Teammates</h2>
+          <div class="title-line"></div>
+          <div class="content-box-body">
+            <p>
+              Manuel Garcia |
+              <a
+                href="https://www.linkedin.com/in/manuel-garcia-3a1704229/"
+                class="linkedinlink"
+                target="_blank"
+                >LinkedIn</a
+              >
+              | Mechanical Design & Movement Subsystem
+            </p>
+            <p>
+              Isaac Linares |
+              <a
+                href="https://www.linkedin.com/in/isaac-linares-492722359/"
+                class="linkedinlink"
+                target="_blank"
+                >LinkedIn</a
+              >
+              | Humidity Subsystem
+            </p>
+            <p>
+              Danial Haddad |
+              <a
+                href="https://www.linkedin.com/in/danial-haddad-529544181/"
+                class="linkedinlink"
+                target="_blank"
+                >LinkedIn</a
+              >
+              | Temperature Subsystem
+            </p>
+            <p>
+              I was in charge of the PCB design, code, and documentation for the
+              project, which you can find
+              <a
+                href="https://team207-s2024.github.io/team207-s2024/"
+                class="linkedinlink"
+                target="_blank"
+                >here.</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second project-overview section (Problem, Solution, Features + Gallery) -->
+    <div class="project-overview">
+      <div class="project-content-section">
+        <div class="content-box">
+          <h2 class="category-title">The Problem</h2>
+          <div class="title-line"></div>
+          <div class="content-box-body">
+            <p>
+              The mission of the team is to create a sensor-based weather-reporting
+              product that is unique, portable, professional, reliable, and
+              user-friendly. It is something that should be focused so that a person can
+              easily use and install themselves and is relatively simple to collect data
+              from, along with contingency plans in case things go awry.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-box">
+          <h2 class="category-title">The Solution</h2>
+          <div class="title-line"></div>
+          <div class="content-box-body">
+            <p>
+              When it comes to plant caretaking, some plants require more than just
+              watering them every now and again Some require a more robust maintenance
+              schedule, which can interfere with people's working schedules. The
+              project seeks to offset that by creating a device that can autonomously
+              care for a plant based on certain factors, such as humidity of the soil or
+              the temperature of the surrounding area, and signal to the user how the
+              plant is doing wherever they are.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-box">
+          <h2 class="category-title">Design Features</h2>
+          <div class="title-line"></div>
+          <div class="content-box-body">
+            <p>
+              The mobile weather station consists of a belt-based movement system that
+              the plant would be placed on, and move to and from a shaded area in
+              accordance to certain variables, such as humidity and temperature.
+            </p>
+          </div>
+        </div>
+
+        <div class="button-container-even">
+          <button class="expand-button collapsed" data-id="1">
+            Mobile
+            <span class="text">
+              The station is built for smaller plants, and thus is easy for the user
+              to place wherever they want.
+            </span>
+          </button>
+
+          <button class="expand-button collapsed" data-id="2">
+            Temperature
+            <span class="text">
+              The temperature sensor built into the station detects if the area is
+              too hot or too cold for the plant, and will move to the shade to
+              protect it accordingly.
+            </span>
+          </button>
+
+          <button class="expand-button collapsed" data-id="3">
+            Humidity
+            <span class="text">
+              The humidity sensor would detect if the soil needs to be watered or
+              not, and will move the plant outside of the shade for the user to
+              water.
+            </span>
+          </button>
+
+          <button class="expand-button collapsed" data-id="4">
+            WiFi
+            <span class="text">
+              The system continuously transmits data to an MQTT server, where the
+              user can see the current state of the plant. The user can also
+              manually send the plant either in or out of the shade by sending a
+              signal from the MQTT server.
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Gallery section using the same structure -->
+      <div class="project-gallery-section">
+        <div class="gallery-wrapper">
+          <button class="gallery-button" onclick="prevImage()">❮</button>
+          <div class="gallery-container">
+            <div id="gallery-content" class="gallery-img-container">
+              <!-- Content (img or iframe) will be dynamically injected here -->
+            </div>
+            <div id="caption" class="image-caption">Final Schematic.</div>
+          </div>
+          <button class="gallery-button" onclick="nextImage()">❯</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Section Title -->
+    <div style="margin-left: 40px;">
+      <h2 class="category-title">Schematic, PCB, and Software Algorithm</h2>
+      <div class="title-line"></div>
+      <p>The following is the work I did specifically for the project.</p>
+    </div>
+
+    <div id="modal" class="modal" onclick="closeModal(event)">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal(event)">&times;</span>
+        <img id="modal-img" src="" alt="Expanded Image" />
+      </div>
+    </div>
+
+    <h2 class="category-title">Lessons Learned</h2>
+    <div class="title-line"></div>
+
+    <p>
+      This project was eye-opening in a lot of ways. It gave me the opportunity
+      to learn how to work extensively in a group where communication was
+      critical in ways I hadn't experienced in other project courses before,
+      given that everyone's subsystems had to not only function, but function
+      with other systems at the same time.
+    </p>
+    <p>
+      Learning how to integrate microcontroller-to-microcontroller communication
+      using two different languages was also novel to me, but it made a lot of
+      sense the more I understood the process. Learning how to transmit and
+      receive serial data using an MQTT server, and being able to visually see
+      my inputs creating a reaction in the system, was a very rewarding process.
+    </p>
+    <p>
+      Developing the board was definitely a process, as WiFi communication can
+      be sensitive even on the best of days, so learning the importance of
+      keeping 'messier' systems like the power supply as far away as possible
+      from anything that needed to transmit or receive data was critical.
+    </p>
+    <p>
+      Finally, it opened my eyes to how fun it is to document the engineering
+      process and develop it for public showing on a website. It made me really
+      appreciate web design and how it wasn't as imposing as I thought it was.
+      While I look back on the website now and can see parts that I could do
+      better, I'm still happy with how it turned out.
+    </p>
+    <p>
+      Overall, this project kickstarted a lot of different interests in me and
+      for that I'll always look back on it fondly, even if it was an incredibly
+      unforgiving project.
+    </p>
+
+    <script>
+      const images = [
+        {
+          type: "img",
+          src: "https://i.imgur.com/7Hb7e5S.jpeg",
+          caption: "Final Schematic",
+        },
+        {
+          type: "img",
+          src: "https://i.imgur.com/7Hb7e5S.jpeg",
+          caption: "PCB Design - Top Layer",
+        },
+        {
+          type: "img",
+          src: "https://i.imgur.com/7Hb7e5S.jpeg",
+          caption: "PCB Design - Bottom Layer",
+        },
+        {
+          type: "img",
+          src: "https://i.imgur.com/7Hb7e5S.jpeg",
+          caption: "Software Algorithm Flowchart",
+        },
+      ];
+      let index = 0;
+
+      // Gallery functions
+      function showContent() {
+        const container = document.getElementById("gallery-content");
+        const caption = document.getElementById("caption");
+        const currentItem = images[index];
+
+        // Clear previous content
+        container.innerHTML = "";
+
+        if (currentItem.type === "img") {
+          const img = document.createElement("img");
+          img.src = currentItem.src;
+          img.alt = "Project Image";
+          img.style.maxWidth = "100%";
+          img.style.maxHeight = "100%";
+          img.style.cursor = "pointer";
+          img.onclick = openModal;
+          container.appendChild(img);
+        } else if (currentItem.type === "iframe") {
+          const iframe = document.createElement("iframe");
+          iframe.src = currentItem.src;
+          iframe.width = "100%";
+          iframe.height = "250";
+          iframe.frameBorder = "0";
+          iframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          iframe.allowFullscreen = true;
+          container.appendChild(iframe);
+        }
+
+        caption.textContent = currentItem.caption;
+      }
+
+      function prevImage() {
+        index = (index - 1 + images.length) % images.length;
+        showContent();
+      }
+
+      function nextImage() {
+        index = (index + 1) % images.length;
+        showContent();
+      }
+
+      function openModal() {
+        if (images[index].type !== "img") return;
+
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modal-img");
+        modalImg.src = images[index].src;
+        modal.style.display = "flex";
+      }
+
+      function closeModal(event) {
+        if (event.target.id === "modal" || event.target.className === "modal-close") {
+          document.getElementById("modal").style.display = "none";
+        }
+      }
+
+      // Expand button functionality
+      const buttons = document.querySelectorAll(".expand-button");
+      let openButton = null;
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          if (openButton && openButton !== button) {
+            openButton.classList.add("collapsed");
+          }
+
+          if (button.classList.contains("collapsed")) {
+            button.classList.remove("collapsed");
+            openButton = button;
+          } else {
+            button.classList.add("collapsed");
+            openButton = null;
+          }
+        });
+      });
+
+      // Initialize everything when DOM loads
+      document.addEventListener("DOMContentLoaded", () => {
+        showContent(); // Initialize gallery
+
+        // Banner image modal functionality
+        const bannerImage = document.querySelector(
+          ".project-banner-wrapper img.modal-trigger"
+        );
+
+        if (bannerImage) {
+          bannerImage.style.cursor = "pointer";
+          bannerImage.addEventListener("click", function () {
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modal-img");
+            modalImg.src = this.src;
+            modal.style.display = "flex";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
