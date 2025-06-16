@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EGR 314 Project: Mobile Plant Caretaker" />
     <title>EGR 314 Project: Mobile Plant Caretaker</title>
     <link rel="stylesheet" href="../../styles.css" />
     <style>
@@ -47,44 +49,43 @@
         max-width: 700px; /* or your desired width */
       }
 
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
 
-    td {
-      border-left: 2px solid #5fa239;   /* Center vertical lines */
-      padding: 10px;
-      text-align: center;
-    }
+      td {
+        border-left: 2px solid #5fa239; /* Center vertical lines */
+        padding: 10px;
+        text-align: center;
+      }
 
-    /* Remove all top/bottom borders unless specified below */
-    td {
-      border-top: none;
-      border-bottom: none;
-    }
+      /* Remove all top/bottom borders unless specified below */
+      td {
+        border-top: none;
+        border-bottom: none;
+      }
 
-    /* First row: white top border */
-    tr:first-child td {
-      border-top: 2px solid white;
-    }
+      /* First row: white top border */
+      tr:first-child td {
+        border-top: 2px solid white;
+      }
 
-    /* Last row: white bottom border */
-    tr:last-child td {
-      border-bottom: 2px solid white;
-    }
+      /* Last row: white bottom border */
+      tr:last-child td {
+        border-bottom: 2px solid white;
+      }
 
-    /* White left border on first column */
-    td:first-child {
-      border-left: 2px solid white;
-    }
+      /* White left border on first column */
+      td:first-child {
+        border-left: 2px solid white;
+      }
 
-    /* White right border on last column */
-    td:last-child {
-      border-right: 2px solid white;
-      text-align: left;
-    }
-
+      /* White right border on last column */
+      td:last-child {
+        border-right: 2px solid white;
+        text-align: left;
+      }
     </style>
   </head>
 
@@ -127,32 +128,38 @@
             <table>
               <tr>
                 <td>Manuel Garcia</td>
-                <td>              <a
-                href="https://www.linkedin.com/in/manuel-garcia-3a1704229/"
-                class="linkedinlink"
-                target="_blank"
-                >LinkedIn</a
-              ></td>
+                <td>
+                  <a
+                    href="https://www.linkedin.com/in/manuel-garcia-3a1704229/"
+                    class="linkedinlink"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </td>
                 <td>Mechanical Design & Movement Subsystem</td>
               </tr>
               <tr>
                 <td>Isaac Linares</td>
-                <td>              <a
-                href="https://www.linkedin.com/in/isaac-linares-492722359/"
-                class="linkedinlink"
-                target="_blank"
-                >LinkedIn</a
-              ></td>
+                <td>
+                  <a
+                    href="https://www.linkedin.com/in/isaac-linares-492722359/"
+                    class="linkedinlink"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </td>
                 <td>Temperature Subsystem</td>
               </tr>
               <tr>
                 <td>Danial Haddad</td>
-                <td>              <a
-                href="https://www.linkedin.com/in/danial-haddad-529544181/"
-                class="linkedinlink"
-                target="_blank"
-                >LinkedIn</a
-              ></td>
+                <td>
+                  <a
+                    href="https://www.linkedin.com/in/danial-haddad-529544181/"
+                    class="linkedinlink"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </td>
                 <td>Temperature Subsystem</td>
               </tr>
             </table>
@@ -223,7 +230,12 @@
 
         <div class="button-container-even">
           <button class="expand-button collapsed" data-id="1">
-            Mobile
+            <div class="button-header">
+              <span class="icon">
+                <img src="../../img/icons/arrow.svg" alt="Move Icon" />
+              </span>
+              <span class="title-text">Mobile</span>
+            </div>
             <span class="text">
               The station is built for smaller plants, and thus is easy for the
               user to place wherever they want.
@@ -231,7 +243,12 @@
           </button>
 
           <button class="expand-button collapsed" data-id="2">
-            Temperature
+            <div class="button-header">
+              <span class="icon">
+                <img src="../../img/icons/thermometer.svg" alt="Temperature Icon" />
+              </span>
+              <span class="title-text">Temperature</span>
+            </div>
             <span class="text">
               The temperature sensor built into the station detects if the area
               is too hot or too cold for the plant, and will move to the shade
@@ -240,7 +257,12 @@
           </button>
 
           <button class="expand-button collapsed" data-id="3">
-            Humidity
+            <div class="button-header">
+              <span class="icon">
+                <img src="../../img/icons/rain.svg" alt="Humidity Icon" />
+              </span>
+              <span class="title-text">Humidity</span>
+            </div>
             <span class="text">
               The humidity sensor would detect if the soil needs to be watered
               or not, and will move the plant outside of the shade for the user
@@ -249,7 +271,12 @@
           </button>
 
           <button class="expand-button collapsed" data-id="4">
-            WiFi
+            <div class="button-header">
+              <span class="icon">
+                <img src="../../img/icons/internet.svg" alt="WiFi Icon" />
+              </span>
+              <span class="title-text">WiFi</span>
+            </div>
             <span class="text">
               The system continuously transmits data to an MQTT server, where
               the user can see the current state of the plant. The user can also

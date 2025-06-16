@@ -35,14 +35,14 @@ a:link {
   color: #5fa239;
   background-color: transparent;
   text-decoration: none;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .linkedinlink:hover {
   color: #5fa239;
   background-color: transparent;
   text-decoration: none;
-  font-weight: bold
+  font-weight: bold;
 }
 a:visited {
   color: black;
@@ -73,7 +73,7 @@ a:visited {
   width: 100vw;
   height: 4px;
   background-color: #5fa239;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
 /* Project Cards */
@@ -156,6 +156,7 @@ a:visited {
   gap: 10px;
   justify-content: center;
   max-width: 100%;
+  align-items: stretch;
 }
 
 .button-container-even {
@@ -164,6 +165,7 @@ a:visited {
   gap: 10px;
   justify-content: center;
   max-width: 100%;
+  align-items: stretch;
 }
 
 .expand-button {
@@ -171,7 +173,7 @@ a:visited {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  background-color: #5FA239;
+  background-color: #5fa239;
   color: white;
   padding: 10px;
   cursor: pointer;
@@ -180,11 +182,14 @@ a:visited {
   font-size: 16px;
   text-align: left;
   text-transform: uppercase;
-  overflow: hidden;
-  transition: max-height 0.6s cubic-bezier(0.4,0,0.2,1), padding-bottom 0.6s cubic-bezier(0.4,0,0.2,1), margin-top 0.6s cubic-bezier(0.4,0,0.2,1);
-  max-height: 50px;
+  overflow: visible;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    padding-bottom 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-top 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 45px;
   width: 100%;
   max-width: 100%;
+  min-height: 45px;
 }
 
 @media (max-width: 520px) {
@@ -202,8 +207,8 @@ a:visited {
 
 .expand-button .title-text {
   flex: 1 1 auto;
-  margin-right: 10px;
-  word-break: break-word;
+  margin-right: 30px;
+  word-break: break-all;
 }
 
 .expand-button .text {
@@ -214,36 +219,36 @@ a:visited {
   font-size: 16px;
   color: #e0ffe0;
   text-transform: none;
-  transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), 
-              margin-top 0.5s cubic-bezier(0.4,0,0.2,1),
-              opacity 0.1s ease;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-top 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s ease;
   line-height: 1.7;
-  max-height: 200px; /* Set a reasonable max-height for expanded state */
+  max-height: 1000px; /* Set a reasonable max-height for expanded state */
   flex: 1 1 100%;
   opacity: 1;
   overflow: hidden;
 }
 
 .expand-button:hover {
-  background-color: #41702A;
+  background-color: #41702a;
 }
 .expand-button.collapsed {
   max-height: 45px;
-  padding-bottom: 10;
+  padding-bottom: 5px;
   margin-top: 0;
 }
 
 .expand-button.collapsed .text {
-  max-height: 0;
-  opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+  max-height: 0px;
+  opacity: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .expand-button:not(.collapsed) {
-  max-height: 300px;
+  max-height: 999px;
+  overflow: visible;
 }
 
 /* Button Icons */
@@ -283,11 +288,11 @@ a:visited {
   align-items: center;
   justify-content: center;
 }
-.gallery-button:first-child{
+.gallery-button:first-child {
   margin-left: 20px;
 }
 
-.gallery-button:last-child{
+.gallery-button:last-child {
   margin-right: 20px;
 }
 
@@ -418,4 +423,34 @@ body::-webkit-scrollbar-track {
 html {
   scrollbar-width: thick;
   scrollbar-color: #5fa239 black;
+}
+
+@media (max-width: 768px) {
+  .button-container,
+  .button-container-even,
+  .project-grid,
+  .gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .expand-button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .project-card {
+    height: auto;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .project-title {
+    font-size: 1rem;
+  }
 }
