@@ -116,7 +116,7 @@ a:visited {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(95, 162, 57, 0.9);
+  background-color: #5fa239;
   color: white;
   display: flex;
   flex-direction: column;
@@ -458,7 +458,8 @@ html {
 }
 
 .project-gallery-section {
-  margin-top: 100px;
+  margin-top: auto; /* Adjust top margin for gallery */
+  margin-bottom: auto;
   gap: 2rem;
 }
 
@@ -468,7 +469,11 @@ html {
 
 table {
   border-collapse: collapse;
-  width: 100%;
+}
+
+table.center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 td {

@@ -10,6 +10,85 @@
     <title>EGR 314 Project: Mobile Plant Caretaker</title>
     <link rel="stylesheet" href="../../styles.css" />
     <style>
+      /* Media Queries for smaller laptop resolutions */
+
+      /* For screens between 1367px and 1025px (inclusive) */
+      @media screen and (max-width: 1366px) and (min-width: 1025px) {
+        body {
+          padding: 40px 60px 80px 60px;
+        }
+
+        .project-overview {
+          gap: 20px;
+          margin-left: 20px;
+          flex-wrap: wrap;
+        }
+
+        .project-content-section {
+          max-width: 100%;
+        }
+
+        .project-gallery-section {
+          margin-top: 10px;
+          text-align: center;
+          width: 100%;
+        }
+
+        .gallery-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start; /* ensures items start at same top line */
+          margin-top: 1.5rem;
+          gap: 0;
+        }
+
+        .gallery-container {
+          width: 100%;
+          max-width: 600px;
+          max-height: 500px; /* maximum height */
+          height: auto; /* allow to shrink/grow */
+          background: #41702a;
+          overflow: hidden; /* hide overflow if image gets bigger */
+          display: flex;
+          flex-direction: column;
+        }
+
+        .gallery-button {
+          align-self: stretch;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background-color: #5fa239;
+          color: white;
+          border: none;
+          padding: 1rem;
+          cursor: pointer;
+          font-size: 1.2rem;
+          width: 60px;
+        }
+        .gallery-img-container {
+          max-height: calc(
+            500px - 60px
+          ); /* container max height minus caption height */
+          height: calc(500px - 60px); /* Set explicit height instead of auto */
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #41702a;
+          overflow: hidden;
+        }
+
+        .gallery-img-container img {
+          max-height: 100%;
+          max-width: 100%; /* Add max-width constraint */
+          width: auto;
+          height: auto; /* Allow height to be auto */
+          display: block;
+          object-fit: contain; /* This will now work properly */
+        }
+      }
+
       @media only screen and (max-width: 900px),
         (max-width: 768px),
         (max-width: 480px) {
@@ -52,6 +131,7 @@
           order: 2;
           width: 100%;
           margin: 0 !important;
+          margin-top: 10px !important;
         }
 
         .gallery-button:first-child {
@@ -140,7 +220,7 @@
           <h2 class="category-title">Teammates</h2>
           <div class="title-line"></div>
           <div class="content-box-body">
-            <table>
+            <table class="center">
               <tr>
                 <td>Manuel Garcia</td>
                 <td>
@@ -192,25 +272,20 @@
         </div>
       </div>
     </div>
-
+    <h2 class="category-title">The Problem</h2>
+    <div class="title-line"></div>
+    <p style="text-align: center; font-size: 24px">
+      <i
+        >The mission of the team is to create a sensor-based weather-reporting
+        product that is unique, portable, professional, reliable, and
+        user-friendly. It is something that should be focused so that a person
+        can easily use and install themselves and is relatively simple to
+        collect data from, along with contingency plans in case things go
+        awry.</i
+      >
+    </p>
     <div class="project-overview">
       <div class="project-content-section">
-        <div class="content-box">
-          <h2 class="category-title" style="border-bottom: 4px solid #5fa239">
-            The Problem
-          </h2>
-          <div class="content-box-body">
-            <p>
-              The mission of the team is to create a sensor-based
-              weather-reporting product that is unique, portable, professional,
-              reliable, and user-friendly. It is something that should be
-              focused so that a person can easily use and install themselves and
-              is relatively simple to collect data from, along with contingency
-              plans in case things go awry.
-            </p>
-          </div>
-        </div>
-
         <div class="content-box">
           <h2 class="category-title" style="border-bottom: 4px solid #5fa239">
             The Solution
@@ -305,14 +380,11 @@
         </div>
       </div>
 
-      <!-- Gallery section using the same structure -->
       <div class="project-gallery-section">
         <div class="gallery-wrapper">
           <button class="gallery-button" onclick="prevImage()">❮</button>
           <div class="gallery-container">
-            <div id="gallery-content" class="gallery-img-container">
-              <!-- Content (img or iframe) will be dynamically injected here -->
-            </div>
+            <div id="gallery-content" class="gallery-img-container"></div>
             <div id="caption" class="image-caption">Final Schematic.</div>
           </div>
           <button class="gallery-button" onclick="nextImage()">❯</button>
@@ -367,23 +439,23 @@
       const images = [
         {
           type: "img",
-          src: "https://i.imgur.com/7Hb7e5S.jpeg",
-          caption: "Caption for Image 1",
+          src: "../../img/engineering-project2/schematic.png",
+          caption: "Schematic for the Final Product",
         },
         {
           type: "img",
-          src: "https://i.imgur.com/7Hb7e5S.jpeg",
-          caption: "Caption for Image 2",
+          src: "../../img/engineering-project2/softwarealgo.png",
+          caption: "Software Algorithm for the Final Product",
         },
         {
           type: "img",
-          src: "https://i.imgur.com/7Hb7e5S.jpeg",
-          caption: "Caption for Image 3",
+          src: "../../img/engineering-project2/toppcb.png",
+          caption: "Top PCB Layer Layout",
         },
         {
           type: "img",
-          src: "https://i.imgur.com/7Hb7e5S.jpeg",
-          caption: "Caption for Image 4",
+          src: "../../img/engineering-project2/botpcb.png",
+          caption: "Bottom PCB Layer Layout",
         },
       ];
       let index = 0;
