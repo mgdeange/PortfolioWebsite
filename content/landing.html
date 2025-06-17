@@ -5,9 +5,62 @@
     <title>Projects</title>
     <link rel="stylesheet" href="../styles.css" />
     <style>
-      @media screen and (min-width: 1500px) {
-        body {
-          overflow: hidden;
+      p {
+        font-size: 24px;
+      }
+
+      .content-box-body {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Vertical centering */
+      }
+
+      .project-overview {
+        margin: 10px 20px 10px 20px;
+      }
+
+      .project-content-section {
+        flex: 1;
+        max-width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .project-banner-wrapper {
+        margin-left: 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      @media screen and (max-width: 1600px) {
+        .button-container {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+      }
+
+      @media only screen and (max-width: 900px) {
+        .project-banner-wrapper img {
+          display: block;
+          max-width: 100%;
+          height: auto; /* Maintains aspect ratio */
+          object-fit: contain; /* Ensures the whole image is visible */
+
+        }
+      .project-banner-wrapper {
+        margin-bottom: 0px;
+      }
+        .content-box {
+          width: 100%;
+          margin-left: 60px;
+        }
+        .project-overview {
+          flex-direction: column;
+          margin-left: 0;
+          gap: 10px;
         }
       }
     </style>
@@ -16,12 +69,37 @@
   <body>
     <h1 class="heading-title">Introduction</h1>
     <div class="title-line"></div>
-    <p>Hi! I'm Michaela, but I go by Mickey for short.</p>
-    <p>I'm a recent Engineering graduate with a focus in Electrical Systems.</p>
-    <p>
-      I'm always looking to improve myself and my skills further to create even
-      better solutions!
-    </p>
+    <div class="project-overview">
+      <div class="project-banner-wrapper">
+        <img
+          src="../img/portrait.jpg"
+          class="modal-trigger"
+          alt="Portrait"
+          height="300"
+          width="300"
+          loading="eager"
+        />
+      </div>
+
+      <div class="project-content-section">
+        <div class="content-box">
+          <div class="content-box-body">
+            <p>
+              Hi! I'm Michaela, but I go by
+              <a style="color: var(--green)"><b>Mickey.</b></a>
+            </p>
+            <p>
+              I'm a recent Engineering graduate with a focus in Electrical
+              Systems.
+            </p>
+            <p>
+              I'm always looking to improve myself and my skills further to
+              create even better solutions!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="skills">
       <h2 class="category-title">Core Skills</h2>
