@@ -2,58 +2,171 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Engineering Project 1 Page"
+      content="EGR 401/402 Project: Hazardous Material Transport"
+    />
     <title>EGR 401/402 Project: Hazardous Material Transport</title>
     <link rel="stylesheet" href="../../styles.css" />
   </head>
-  <body>
-    <h1 class="heading-title">
-      EGR 401/402 Project: Hazardous Material Transport
-    </h1>
 
-    <h2 class="category-title">Abstract</h2>
-    <p>
+  <body>
+    <h1 class="heading-title">EGR 401/402 Project: Hazardous Material Transport</h1>
+    <div class="title-line"></div>
+
+    <div class="project-overview">
+      <div class="project-banner-wrapper">
+        <img
+          src="../../img/engineering-project1/transportstation.png"
+          class="modal-trigger"
+          alt="Material Transport Station"
+          loading="eager"
+        />
+      </div>
+
+      <div class="project-content-section">
+        <div class="content-box">
+          <h2 class="category-title">Abstract</h2>
+          <div class="title-line"></div>
+          <div class="content-box-body">
+            <p>
       As part of the Fall 2024/Spring 2025 Capstone for ASU Polytechnic, the
       team worked closely with Los Alamos National Laboratories to design and
       fabricate a prototype to assist glovebox operators in moving material
       between gloveboxes.
-    </p>
+            </p>
+          </div>
+        </div>
 
-    <h2 class="category-title">Teammates</h2>
-    <p>
-      Wiliam Pena |
-      <a
-        href="https://www.linkedin.com/in/wmpena/"
-        class="linkedinlink"
-        target="_blank"
-        >LinkedIn</a
+        <div class="content-box">
+          <h2 class="category-title">Teammates</h2>
+          <div class="title-line"></div>
+          <div class="content-box-body">
+            <table class="center">
+              <tr>
+                <td>Wiliam Pena</td>
+                <td>
+                  <a
+                    href="https://www.linkedin.com/in/wmpena/"
+                    class="linkedinlink"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </td>
+                <td>Mechanical Design & Machining</td>
+              </tr>
+              <tr>
+                <td>Colin Fricke</td>
+                <td>
+                  <a
+                    href="https://www.linkedin.com/in/colin-fricke/"
+                    class="linkedinlink"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </td>
+                <td>UR5e Coding & Controls</td>
+              </tr>
+            </table>
+            <p>
+              I was in charge of the electrical system, which included cabling and wiring between the UR5e, the valve manifold, sensors, and indicator lights. I was also in charge of tubing and pneumatic integration within the mechanical design. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 class="category-title">The Problem</h2>
+    <div class="title-line"></div>
+    <p style="text-align: center; font-size: 24px">
+      <i
+        >The purpose of this project is to develop a unique and innovative way to effectively transport substantial material between glovebox units. The solution must reduce operator strain while maintaining high efficiency. Designs will be optimized for cycle time and load capacity, with a focus on enabling the operator to easily send the material from one glovebox to another.
+.</i
       >
-      | Mechanical Design & Machining
     </p>
+    <div class="project-overview">
+      <div class="project-content-section">
+        <div class="content-box">
+          <h2 class="category-title subtitle-line">
+            The Solution
+          </h2>
+          <div class="content-box-body">
+            <p>
+              Currently, there are a wide variety of different methods of transportation between gloveboxes already implemented into the LANL facilities. However, these systems were not designed with user experience in mind. On top of other requirements, the team focused on making sure the operator does not need to strain themselves in order to move material from glovebox to glovebox. In order to do that, the team focused on making an assistive system that requires just a click of the button to do the dirty work. 
+            </p>
+          </div>
+        </div>
 
-    <p>
-      Colin Fricke |
-      <a
-        href="https://www.linkedin.com/in/colin-fricke/"
-        class="linkedinlink"
-        target="_blank"
-        >LinkedIn</a
-      >
-      | UR5e Coding & Controls
-    </p>
+        <div class="content-box">
+          <h2 class="category-title" style="border-bottom: 4px solid #5fa239">
+            Design Features
+          </h2>
+          <div class="content-box-body">
+            <p>
+              The transportation system utilizes both a Universal Robot 5e and an XY axis pneumatic-powered system to move an object from one glovebox to another. 
+            </p>
+          </div>
+        </div>
 
-    <h2 class="category-title">
-      Main Content (figure out how to segment it nicely)
-    </h2>
-    <p>Todo: Add a gallery for the pictures, including the schematics/model.</p>
+        <div class="button-container-even">
+          <button class="expand-button collapsed" data-id="1">
+            <div class="button-header">
+              <span class="icon">
+                <img src="../../img/icons/arrow.svg" alt="Move Icon" />
+              </span>
+              <span class="title-text">Mobile</span>
+            </div>
+            <span class="text">
+              The station was constructed to have wheels for two purposes. One, because it needed to be transported to and from locations. Two, because in the real-world environment it would move between glovebox pairs. 
+            </span>
+          </button>
 
-    <div style="display: flex; justify-content: center; align-items: center">
-      <div style="display: flex; flex-direction: column">
+          <button class="expand-button collapsed" data-id="2">
+            <div class="button-header">
+              <span class="icon">
+                <img
+                  src="../../img/icons/thermometer.svg"
+                  alt="Temperature Icon"
+                />
+              </span>
+              <span class="title-text">Automation</span>
+            </div>
+            <span class="text">
+              The transportation system utilizes a cobot to move a canister to and from its destination. When triggered by a button press, the system performs the entire transportation process. 
+            </span>
+          </button>
+
+          <button class="expand-button collapsed" data-id="3">
+            <div class="button-header">
+              <span class="icon">
+                <img src="../../img/icons/rain.svg" alt="Humidity Icon" />
+              </span>
+              <span class="title-text">Sturdy</span>
+            </div>
+            <span class="text">
+              As the system was intended for heavy, radioactive materials, the tunnel is made in a way that would be able to easily handle the weight capacity, at least on the pneumatic side. For the robotic arm, there was a significantly smaller limit due to its use as a cobot rather than a more robust robot that it would otherwise be in a real setting. 
+            </span>
+          </button>
+
+          <button class="expand-button collapsed" data-id="4">
+            <div class="button-header">
+              <span class="icon">
+                <img src="../../img/icons/internet.svg" alt="WiFi Icon" />
+              </span>
+              <span class="title-text">Simple</span>
+            </div>
+            <span class="text">
+              The system is reliant on only the UR5e as the controller for the system. It does not need to connect to the internet, nor does it need another controller to perform its functions. It is simplified down to basic inputs and outputs outside of the robots movements, which it was designed to do.
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="project-gallery-section">
         <div class="gallery-wrapper">
           <button class="gallery-button" onclick="prevImage()">❮</button>
           <div class="gallery-container">
-            <div id="gallery-content" class="gallery-img-container">
-              <!-- Content (img or iframe) will be dynamically injected here -->
-            </div>
+            <div id="gallery-content" class="gallery-img-container"></div>
             <div id="caption" class="image-caption">Final Schematic.</div>
           </div>
           <button class="gallery-button" onclick="nextImage()">❯</button>
@@ -68,39 +181,83 @@
       </div>
     </div>
 
+    <h2 class="category-title">Lessons Learned</h2>
+    <div class="title-line"></div>
+
+    <p>
+      I would say that this project was easily one of the most difficult things I have had to do in my life from a development perspective. Due to multiple factors, it took a significant amount of time of my life to get to the finish line, but I am exceptionally proud that it made it.
+    </p>
+    <p>
+      Working with a place like Los Alamos with few barriers for what our team wanted to do was a double edged sword, but it was an experience that I couldn't get anywhere else and for that I'll always be grateful.
+    </p>
+    <p>
+     I was able to, and had to, learn about things that I otherwise would not have had the opportunity to learn, such as pneumatic systems. I also got extremely important on-hands experience with automation equipment and how to integrate things together to make it all work, as well as basic paneling techniques. While there was signficant stress when it came to working with machinery that would be expensive if broken, and thus all actions taken had to be completely justified and explained, it gave me more confidence in handling that sort of equipment. 
+    </p>
+    <p>
+      As part of the pneumatic development, our team also worked with a company to integrate it into our project rather than having to pick out parts ourselves. While again, this was a double edged sword due to both inexperience with pneumatics and some hiccups when it came to delays in getting the equipment onsite, it was integral in learning how to deal with issues on the fly and be able to make it work in spite of that. 
+    </p>
+    <p>
+    It would be remiss of me to talk about all this without having a shoutout to a couple of people. First would be my fellow teammate William Pena, who was integral in getting this project to its end state. He worked tirelessly to get everything done, and without him it simply would have not been finished in time. Next would be Dr. Mike Lackner, our industry sponsor from Los Alamos National Laboratories. He was an uplifting presence who gave us a lot of advice on how to get our project moving forward. Finally, Professor Jerry Gintz, our ASU mentor, who was a driving force in pushing us to create the best project we could rather than a project that was good enough. Without him we'd have made something passable, but nothing particularly noteworthy. 
+    </p>
+    <p>
+      To be frank, this would be the most defining project for what I can do as a person. Not only did I learn a lot, but I put it to the test. It was something that I don't think a lot of my graduating class could have done in that time, and definitely not with the manpower at hand. It may have been the most difficult, but it was also the most rewarding. 
+    </p>
+
     <script>
+      // Images for Gallery
       const images = [
         {
           type: "img",
-          src: "https://i.imgur.com/7Hb7e5S.jpeg",
-          caption: "Caption for Image 1",
+          src: "../../img/engineering-project1/schematic.png",
+          caption: "Schematic for the Final Product",
         },
         {
           type: "img",
-          src: "https://i.imgur.com/7Hb7e5S.jpeg",
-          caption: "Caption for Image 2",
+          src: "../../img/engineering-project1/detailimage1.png",
+          caption: "Detailed Image of the Linear Bearing",
         },
         {
           type: "img",
-          src: "https://i.imgur.com/7Hb7e5S.jpeg",
-          caption: "Caption for Image 3",
+          src: "../../img/engineering-project1/showcaseimage1.jpg",
+          caption: "Project at Innovation Showcase",
         },
         {
           type: "img",
-          src: "https://i.imgur.com/7Hb7e5S.jpeg",
-          caption: "Caption for Image 4",
+          src: "../../img/engineering-project1/respects.png",
+          caption: "List of Contributors for the Project",
         },
       ];
       let index = 0;
     </script>
+
     <script src="../../scripts.js"></script>
+
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("DOMContentLoaded", function () {
+        // Gallery Initialization
         if (
           typeof images !== "undefined" &&
           typeof showContent === "function"
         ) {
           showContent(); // Initialize gallery
+        }
+
+        // Modal Functionality
+        const bannerImage = document.querySelector(
+          ".project-banner-wrapper img.modal-trigger"
+        );
+
+        if (bannerImage) {
+          // Add cursor pointer styling
+          bannerImage.style.cursor = "pointer";
+
+          // Add click event listener
+          bannerImage.addEventListener("click", function () {
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modal-img");
+            modalImg.src = this.src;
+            modal.style.display = "flex";
+          });
         }
       });
     </script>

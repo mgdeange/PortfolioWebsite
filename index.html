@@ -85,6 +85,11 @@
         background-color: #5FA239;
         z-index: 0;
         flex-shrink: 0;
+
+        /* Make sidebar a column flex container */
+        display: flex;
+        flex-direction: column;
+        padding-bottom:20px;
       }
 
       /* Sidebar Layer 1 (no gradient) */
@@ -172,6 +177,22 @@
         margin-left: 15px;
       }
 
+      .sidebar-credits {
+        margin-top: auto;
+        margin-bottom: 40px;
+      }
+      .sidebar a.sidebar-credits {
+        position: absolute;
+        bottom: 40px; /* distance from bottom */
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+
+        border-bottom: 2px solid white;
+        width: calc(100% - 25px); /* leaves gap on left */
+        margin-left: auto; /* pushes border to right */
+        }
+
       /* Content Positioning */
       .content {
         flex-grow: 1;
@@ -246,6 +267,7 @@
             >Work</a
           >
         </details>
+        <a href="content/credits.html" target="contentFrame" class="sidebar-credits">Credits</a>
       </div>
 
       <!-- Content Container -->
@@ -276,6 +298,9 @@
           fun: "content/projects-personal.html",
           work: "content/projects-work.html",
           job: "content/projects-work.html",
+          credits: "content/credits.html",
+          credit: "content/credits.html",
+          resume: "img/resume.pdf",
         };
 
         if (pages[query]) {
